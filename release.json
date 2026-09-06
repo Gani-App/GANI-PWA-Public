@@ -1,9 +1,9 @@
 {
   "product": "GANI",
-  "release": "2026.09-locked-responsive-v39",
+  "release": "2026.09-universal-functional-v40",
   "status": "UNIVERSAL_DOWNLOAD_READY",
-  "version": "39.0.0",
-  "android_version_code": 39,
+  "version": "40.0.0",
+  "android_version_code": 40,
   "surfaces": [
     "HTTPS Web/PWA",
     "Direct Android APK from GANI website",
