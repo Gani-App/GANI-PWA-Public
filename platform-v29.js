@@ -11,6 +11,6 @@ window.addEventListener("DOMContentLoaded",()=>{
     hero.after(ticker);
   }
   const mobileMarket=document.querySelector(".mobile-market-grid");
-  if(mobileMarket)mobileMarket.innerHTML=`<article><small>XAUUSD</small><b>2,453.61</b><em>▲ +0.82%</em></article><article><small>EURUSD</small><b>1.0823</b><em>▲ +0.36%</em></article><article><small>BTCUSD</small><b>67,248</b><em>▲ +1.24%</em></article>`;
+  if(mobileMarket&&!mobileMarket.querySelector(".market-name"))mobileMarket.innerHTML=`<article><small>XAUUSD</small><b>2,453.61</b><em>▲ +0.82%</em></article><article><small>EURUSD</small><b>1.0823</b><em>▲ +0.36%</em></article><article><small>BTCUSD</small><b>67,248</b><em>▲ +1.24%</em></article>`;
 });
 })();

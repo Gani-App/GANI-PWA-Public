@@ -6,8 +6,10 @@ required=["index.html","install.html","manifest.webmanifest","sw.js",
           "icon-192.png","icon-512.png","icon-maskable-512.png","release.json",
           "platform-v27.css","platform-v27.js","platform-v28.css",
           "platform-v29.css","platform-v29.js","platform-v30.css",
+          "platform-v31.css","platform-v32.css",
           "assets/gani-market-mountains-v29.png",
-          "assets/gani-logo-transparent-v30.png"]
+          "assets/gani-logo-transparent-v30.png",
+          "assets/gani-app-icon-v31.png"]
 missing=[x for x in required if not (root/x).is_file()]
 if missing:
     print("FAIL missing:", ", ".join(missing)); sys.exit(1)

@@ -7,12 +7,14 @@
 <meta name="color-scheme" content="dark">
 <title>GANI • Smart Platform</title>
 <link rel="manifest" href="manifest.webmanifest">
-<link rel="icon" href="assets/gani-logo.png">
+<link rel="icon" href="icon-192.png">
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="platform-v27.css">
 <link rel="stylesheet" href="platform-v28.css">
 <link rel="stylesheet" href="platform-v29.css">
 <link rel="stylesheet" href="platform-v30.css">
+<link rel="stylesheet" href="platform-v31.css">
+<link rel="stylesheet" href="platform-v32.css">
 <script src="gani-config.js" defer></script>
 <script src="mock-api.js" defer></script>
 <script src="mock-compat.js" defer></script>
@@ -82,24 +84,28 @@
       <div class="mobile-hero-copy"><small>DISCIPLINE • ANALYZE • GROW</small><h2>Trade Smarter<br>With <em>GANI</em></h2><p>Advanced tools, clear insights and a guided customer workspace.</p><button class="primary" data-screen="discover">Get Started →</button><div class="mobile-trust"><span>✓ Secure</span><span>ϟ Fast</span><span>▥ Clear</span></div></div>
       <img src="assets/gani-logo-transparent-v30.png" alt="GANI lion">
     </article>
-    <div class="mobile-section-head"><h3>Explore GANI</h3><small>Everything in one place</small></div>
-    <div class="mobile-feature-grid">
-      <button data-screen="discover"><span class="mi">▥</span><b>Market<br>Analysis</b><small>Discover</small></button>
-      <button data-screen="dashboard"><span class="mi">⌁</span><b>Account<br>Analytics</b><small>Insights</small></button>
-      <button data-screen="verify"><span class="mi">✓</span><b>Verify<br>Tools</b><small>Protected</small></button>
-      <button data-screen="education"><span class="mi">◇</span><b>Education</b><small>Learn</small></button>
-      <button data-screen="support"><span class="mi">◉</span><b>Support</b><small>Help</small></button>
-      <button data-screen="profile"><span class="mi">●</span><b>Account</b><small>Profile</small></button>
-    </div>
-    <div class="mobile-section-head"><h3>Platform overview</h3><small><span class="app-status-dot"></span> <span id="mobileDataLabel">Data</span></small></div>
+    <div class="mobile-section-head market-heading"><h3>Market Snapshot</h3><button data-screen="discover"><span class="app-status-dot"></span> Live Markets ›</button></div>
     <section class="mobile-market">
-      <div class="mobile-market-head"><b>GANI Overview</b><span><i class="app-status-dot"></i> Active</span></div>
       <div class="mobile-market-grid">
-        <article><small>MARKETPLACE</small><b id="mobileMarketCount">—</b><em>records</em></article>
-        <article><small>ACCOUNTS</small><b id="mobileAccountCount">—</b><em>available</em></article>
-        <article><small>NOTICES</small><b id="mobileNoticeCount">—</b><em>unread</em></article>
+        <article class="up"><div class="market-name"><span>€</span><b>EUR/USD</b></div><strong>1.0824</strong><em>▲ +0.0018&nbsp;&nbsp;+0.17%</em><svg viewBox="0 0 120 32" aria-hidden="true"><path d="M2 27L14 23L24 25L36 18L47 20L59 14L70 17L82 10L93 13L105 6L118 3"/></svg></article>
+        <article class="down"><div class="market-name"><span>◆</span><b>Gold</b></div><strong>2,415.32</strong><em>▼ −12.63&nbsp;&nbsp;−0.52%</em><svg viewBox="0 0 120 32" aria-hidden="true"><path d="M2 6L14 10L24 7L36 15L47 12L59 20L70 17L82 24L93 21L105 28L118 26"/></svg></article>
+        <article class="up"><div class="market-name"><span>₿</span><b>BTC/USD</b></div><strong>67,284.50</strong><em>▲ +1,327.40&nbsp;&nbsp;+2.01%</em><svg viewBox="0 0 120 32" aria-hidden="true"><path d="M2 25L14 20L24 22L36 16L47 19L59 14L70 15L82 9L93 11L105 5L118 2"/></svg></article>
       </div>
     </section>
+    <div class="mobile-section-head quick-heading"><h3>Quick Access</h3><small>Everything in one place ›</small></div>
+    <div class="mobile-feature-grid">
+      <button data-screen="discover"><span class="mi">▥</span><b>Market<br>Analysis</b><small>Discover opportunities <i>›</i></small></button>
+      <button data-screen="dashboard"><span class="mi">⌁</span><b>Account<br>Analytics</b><small>Track performance <i>›</i></small></button>
+      <button data-screen="verify"><span class="mi">✓</span><b>Verify<br>Tools</b><small>Trade with confidence <i>›</i></small></button>
+      <button data-screen="education"><span class="mi">◇</span><b>Education</b><small>Learn and grow <i>›</i></small></button>
+    </div>
+    <div class="mobile-section-head insights-heading"><h3>Latest Insights</h3><button data-screen="education">View all ›</button></div>
+    <section class="mobile-insight" data-screen="education" role="button" tabindex="0">
+      <div class="insight-image" aria-hidden="true"></div>
+      <div class="insight-copy"><div><span>MARKET ANALYSIS</span><time>2h ago</time></div><h4>Global Markets Steady as Investors Eye Central Bank Signals</h4><p>Key indices hold gains amid a balanced outlook for the coming period.</p></div>
+      <b aria-hidden="true">›</b>
+    </section>
+    <div class="mobile-runtime-data" hidden><span id="mobileDataLabel">Data</span><b id="mobileMarketCount">—</b><b id="mobileAccountCount">—</b><b id="mobileNoticeCount">—</b></div>
     <div class="mobile-command-strip"><article><small>SYSTEM STATUS</small><b>Customer workspace ready</b><div class="progress"><i></i></div></article><article><small>SECURITY</small><b>Protected data boundary</b><div class="progress"><i style="width:92%"></i></div></article></div>
   </section>
   <section class="hero-card">
@@ -275,7 +281,7 @@
   <header class="page-intro account-intro"><div><p class="eyebrow">GANI ACCOUNT</p><h2>Your identity,<br><em>at a glance.</em></h2><p>Read-only customer profile and source status.</p></div></header>
   <div class="profile-layout">
     <article class="profile-card">
-      <div class="profile-glow"></div><div class="avatar"><img src="assets/gani-logo.png" alt="GANI"></div>
+      <div class="profile-glow"></div><div class="avatar"><img src="assets/gani-logo-transparent-v30.png" alt="GANI"></div>
       <span class="status-pill profile-status" id="verifiedBadge">Status</span><h2 id="profileName">GANI User</h2><p id="profileState">Loading profile…</p>
       <div class="profile-actions"><button class="primary" data-screen="dashboard">View analytics</button><button class="secondary" data-screen="support">Support</button></div>
     </article>
@@ -296,7 +302,7 @@
 </nav>
 
 <footer>
-  <a class="brand" href="#home" data-screen="home"><img src="assets/gani-logo.png" alt="GANI"><span><b>GANI</b><small>SMART PLATFORM</small></span></a>
+  <a class="brand" href="#home" data-screen="home"><img src="assets/gani-logo-transparent-v30.png" alt="GANI"><span><b>GANI</b><small>SMART PLATFORM</small></span></a>
   <p>DISCIPLINE <span>•</span> ANALYZE <span>•</span> GROW</p><small>© 2026 GANI</small>
 </footer>
 <div class="toast" id="toast"></div>
