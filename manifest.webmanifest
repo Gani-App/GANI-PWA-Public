@@ -1,0 +1,66 @@
+{
+  "id": "./",
+  "name": "GANI",
+  "short_name": "GANI",
+  "description": "GANI customer app — raadi, xaqiiji, barbar dhig oo maamul.",
+  "lang": "so",
+  "dir": "ltr",
+  "start_url": "./index.html?source=app",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": [
+    "window-controls-overlay",
+    "standalone",
+    "minimal-ui"
+  ],
+  "orientation": "portrait-primary",
+  "background_color": "#f4f8fd",
+  "theme_color": "#061b3b",
+  "categories": [
+    "business",
+    "productivity",
+    "finance"
+  ],
+  "icons": [
+    {
+      "src": "./icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "./icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Raadi",
+      "short_name": "Raadi",
+      "url": "./index.html#marketplace"
+    },
+    {
+      "name": "Xaqiiji",
+      "short_name": "Xaqiiji",
+      "url": "./index.html#xaqiijin"
+    },
+    {
+      "name": "Dashboard",
+      "short_name": "Dashboard",
+      "url": "./index.html#portal"
+    },
+    {
+      "name": "Caawimo",
+      "short_name": "Caawimo",
+      "url": "./index.html#faq"
+    }
+  ]
+}

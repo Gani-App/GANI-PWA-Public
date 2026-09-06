@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="so"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Soo dejiso GANI</title>
+<style>
+body{font-family:system-ui,sans-serif;margin:0;background:#f5f8fb;color:#092443}
+main{max-width:620px;margin:auto;padding:42px 18px}.card{background:white;border:1px solid #dbe6ef;border-radius:22px;padding:24px}
+h1{margin:0 0 8px;font-size:1.65rem}p{color:#65788b;line-height:1.55}
+a,button{display:block;width:100%;box-sizing:border-box;margin-top:10px;padding:14px;border:0;border-radius:13px;background:#092443;color:white;text-align:center;text-decoration:none;font-weight:800;font-size:1rem}
+.secondary{background:#e9f1f7;color:#092443}.small{font-size:.78rem}
+</style></head><body><main><div class="card">
+<h1>GANI</h1><p id="msg">Hal meel ka fur ama ku rakib GANI.</p>
+<button id="install" hidden>Ku rakib GANI</button>
+<a href="./index.html">Fur GANI</a>
+<a class="secondary" href="./index.html?source=mobile">Mobile</a>
+<p class="small" id="hint"></p>
+</div></main>
+<script>
+let deferred;
+const b=document.getElementById('install'), hint=document.getElementById('hint');
+addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferred=e;b.hidden=false});
+b.onclick=async()=>{if(!deferred)return;deferred.prompt();await deferred.userChoice;deferred=null;b.hidden=true};
+const ua=navigator.userAgent;
+if(/iPhone|iPad/i.test(ua)) hint.textContent='iPhone/iPad: Safari ka fur, kadib Share → Add to Home Screen.';
+else if(/Android/i.test(ua)) hint.textContent='Android: marka HTTPS lagu furo, badhanka rakibidda ayaa soo muuqan kara.';
+else hint.textContent='Desktop: GANI browser-ka ka fur; browsers taageera waxay bixin karaan install.';
+</script></body></html>
