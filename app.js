@@ -18,6 +18,7 @@ async function loadDashboard(){updateMode();await Promise.all([loadAccounts(),lo
 async function verify(){const ref=$('#verifyInput').value.trim(),box=$('#verifyResult');if(!ref){toast('Enter a GANI reference');return}box.className='verify-result';box.innerHTML='<div class="skeleton"></div>';const r=await safe(()=>GANIAppData.verify(ref));if(!r){box.innerHTML='<div class="verify-ring"><span>!</span></div><small>VERIFICATION</small><h3>Unable to verify</h3><p>Check the data source and try again.</p>';return}const ok=String(r.status).toLowerCase()==='verified';box.className='verify-result '+(ok?'success':'fail');box.innerHTML=`<div class="verify-ring"><span>${ok?'✓':'!'}</span></div><small>VERIFICATION</small><h3>${ok?'Verified':'Not verified'}</h3><p>${esc(r.reference||ref)}</p><span class="status-pill ${ok?'':'neutral'}">${esc(r.mode||mode())}</span>`}
 function bind(){
   $$('[data-screen]').forEach(b=>b.addEventListener('click',e=>{e.preventDefault();show(b.dataset.screen)}));
+  $$('[role="button"][data-screen]').forEach(b=>b.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();show(b.dataset.screen)}}));
   $('#menuToggle').onclick=()=>$('#mobileMenu').classList.toggle('open');
   $('#searchToggle').onclick=()=>{$('#searchPanel').classList.add('open');$('#globalSearch').focus()};
   $('#searchClose').onclick=()=>$('#searchPanel').classList.remove('open');

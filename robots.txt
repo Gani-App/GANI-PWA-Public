@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://gaani367-boop.github.io/GANI-PWA-Public/sitemap.xml

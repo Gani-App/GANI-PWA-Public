@@ -2,7 +2,7 @@
   "id": "./",
   "name": "GANI",
   "short_name": "GANI",
-  "description": "GANI customer and partner platform for marketplace discovery, eligibility, applications, agreements, payments, support and account management.",
+  "description": "GANI — adeegyada, suuqyada, xaqiijinta, waxbarashada, taageerada iyo maamulka account-ka oo hal meel ku wada jira.",
   "lang": "so",
   "dir": "ltr",
   "start_url": "./index.html?source=app",

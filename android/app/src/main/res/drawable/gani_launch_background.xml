@@ -1,6 +1,0 @@
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:drawable="@color/gani_navy_deep" />
-    <item android:gravity="center" android:width="180dp" android:height="180dp">
-        <bitmap android:src="@drawable/gani_splash_mark" android:gravity="center" />
-    </item>
-</layer-list>

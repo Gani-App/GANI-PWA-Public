@@ -1,9 +1,9 @@
 {
   "product": "GANI",
-  "release": "2026.09-universal-download",
+  "release": "2026.09-clean-functional-public",
   "status": "UNIVERSAL_DOWNLOAD_READY",
-  "version": "35.0.0",
-  "android_version_code": 34,
+  "version": "37.0.0",
+  "android_version_code": 37,
   "surfaces": [
     "HTTPS Web/PWA",
     "Direct Android APK from GANI website",

@@ -5,7 +5,10 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#020713">
 <meta name="color-scheme" content="dark">
-<title>GANI • Smart Platform</title>
+<title>GANI</title>
+<meta name="description" content="GANI — adeegyada, suuqyada, xaqiijinta, waxbarashada, taageerada iyo maamulka account-ka oo hal meel ku wada jira.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="canonical" href="https://gaani367-boop.github.io/GANI-PWA-Public/">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icon-192.png">
 <link rel="stylesheet" href="styles.css">
@@ -17,6 +20,8 @@
 <link rel="stylesheet" href="platform-v32.css">
 <link rel="stylesheet" href="platform-v33.css">
 <link rel="stylesheet" href="platform-v34.css">
+<link rel="stylesheet" href="platform-v37.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"GANI","url":"https://gaani367-boop.github.io/GANI-PWA-Public/","logo":"https://gaani367-boop.github.io/GANI-PWA-Public/icon-512.png"}</script>
 <script src="gani-config.js" defer></script>
 <script src="mock-api.js" defer></script>
 <script src="mock-compat.js" defer></script>
@@ -33,7 +38,7 @@
 <header class="app-header">
   <a class="brand" href="#home" data-screen="home" aria-label="GANI Home">
     <img src="assets/gani-logo-transparent-v30.png" alt="GANI">
-    <span><b>GANI</b><small>SMART PLATFORM</small></span>
+    <span><b>GANI</b></span>
   </a>
   <nav class="desktop-nav" aria-label="Main navigation">
     <button data-screen="home" class="active"><span>Home</span></button>
@@ -83,15 +88,15 @@
   <section class="mobile-app-home" aria-label="GANI mobile home">
     <div class="mobile-welcome"><div><p>Welcome to GANI</p><h1>Smarter <em>control.</em></h1></div><span class="mode-badge" id="mobileMode">Checking…</span></div>
     <article class="mobile-hero">
-      <div class="mobile-hero-copy"><small>GLOBAL MARKETS · BRIGHTER OPPORTUNITIES.</small><h2>Trade Smarter.<br><em>Grow Stronger.</em></h2><p>Markets, analytics and trusted tools in one secure platform.</p><div class="mobile-hero-actions"><button class="primary" data-screen="discover">Start Trading <span>→</span></button><button class="secondary" data-screen="discover">Explore Markets</button><a class="secondary gani-download-link" href="install.html">Download GANI</a></div><div class="mobile-trust"><span>✓ Secure</span><span>▥ Real-Time Data</span><span>♙ Trusted Tools</span><span>◎ Global Access</span></div></div>
-      <img src="assets/gani-target-hero-v34.png" alt="Global markets visualization">
+      <div class="mobile-hero-copy"><small>GANI</small><h2>Trade Smarter.<br><em>Grow Stronger.</em></h2><p>Markets, analytics and trusted tools in one secure place.</p><div class="mobile-hero-actions"><a class="primary gani-download-link" href="download.html">Download GANI <span>↓</span></a><button class="secondary" data-screen="discover">Explore Markets</button></div><div class="mobile-trust"><span>✓ Secure</span><span>▥ Market Data</span><span>♙ Trusted Tools</span><span>◎ Global Access</span></div></div>
+      <img src="assets/gani-official-v34.png" alt="GANI">
     </article>
     <div class="mobile-section-head market-heading"><h3>Market Snapshot</h3><button data-screen="discover"><span class="app-status-dot"></span> Live Markets ›</button></div>
     <section class="mobile-market">
       <div class="mobile-market-grid">
-        <article class="up"><div class="market-name"><span>€</span><b>EUR/USD</b></div><strong>1.0824</strong><em>▲ +0.0018&nbsp;&nbsp;+0.17%</em><svg viewBox="0 0 120 32" aria-hidden="true"><path d="M2 27L14 23L24 25L36 18L47 20L59 14L70 17L82 10L93 13L105 6L118 3"/></svg></article>
-        <article class="down"><div class="market-name"><span>◆</span><b>Gold</b></div><strong>2,415.32</strong><em>▼ −12.63&nbsp;&nbsp;−0.52%</em><svg viewBox="0 0 120 32" aria-hidden="true"><path d="M2 6L14 10L24 7L36 15L47 12L59 20L70 17L82 24L93 21L105 28L118 26"/></svg></article>
-        <article class="up"><div class="market-name"><span>₿</span><b>BTC/USD</b></div><strong>67,284.50</strong><em>▲ +1,327.40&nbsp;&nbsp;+2.01%</em><svg viewBox="0 0 120 32" aria-hidden="true"><path d="M2 25L14 20L24 22L36 16L47 19L59 14L70 15L82 9L93 11L105 5L118 2"/></svg></article>
+        <article class="up" data-screen="discover" role="button" tabindex="0"><div class="market-name"><span>€</span><b>EUR/USD</b></div><strong>1.0824</strong><em>▲ +0.0018&nbsp;&nbsp;+0.17%</em><svg viewBox="0 0 120 32" aria-hidden="true"><path d="M2 27L14 23L24 25L36 18L47 20L59 14L70 17L82 10L93 13L105 6L118 3"/></svg></article>
+        <article class="down" data-screen="discover" role="button" tabindex="0"><div class="market-name"><span>◆</span><b>Gold</b></div><strong>2,415.32</strong><em>▼ −12.63&nbsp;&nbsp;−0.52%</em><svg viewBox="0 0 120 32" aria-hidden="true"><path d="M2 6L14 10L24 7L36 15L47 12L59 20L70 17L82 24L93 21L105 28L118 26"/></svg></article>
+        <article class="up" data-screen="discover" role="button" tabindex="0"><div class="market-name"><span>₿</span><b>BTC/USD</b></div><strong>67,284.50</strong><em>▲ +1,327.40&nbsp;&nbsp;+2.01%</em><svg viewBox="0 0 120 32" aria-hidden="true"><path d="M2 25L14 20L24 22L36 16L47 19L59 14L70 15L82 9L93 11L105 5L118 2"/></svg></article>
       </div>
     </section>
     <div class="mobile-section-head quick-heading"><h3>Quick Access</h3><small>Everything in one place ›</small></div>
@@ -118,7 +123,7 @@
       <p class="lead">Advanced tools. Clear insights.<br>Your success, our priority.</p>
       <div class="hero-actions">
         <button class="primary hero-primary" data-screen="discover">Get Started <span>→</span></button>
-        <button class="secondary" data-screen="education"><span class="play">▶</span> Learn More</button><a class="secondary gani-download-link" href="install.html">Download GANI</a>
+        <button class="secondary" data-screen="education"><span class="play">▶</span> Learn More</button><a class="secondary gani-download-link" href="download.html">Download GANI</a>
       </div>
       <div class="trust-row" aria-label="Platform qualities">
         <span><i class="mini-icon shield-icon">✓</i><b>Secure</b></span>
@@ -304,7 +309,7 @@
 </nav>
 
 <footer>
-  <a class="brand" href="#home" data-screen="home"><img src="assets/gani-logo-transparent-v30.png" alt="GANI"><span><b>GANI</b><small>SMART PLATFORM</small></span></a>
+  <a class="brand" href="#home" data-screen="home"><img src="assets/gani-logo-transparent-v30.png" alt="GANI"><span><b>GANI</b></span></a>
   <p>DISCIPLINE <span>•</span> ANALYZE <span>•</span> GROW</p><small>© 2026 GANI</small>
 </footer>
 <div class="toast" id="toast"></div>

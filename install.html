@@ -4,7 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#020713">
-<title>Download GANI</title>
+<title>GANI</title>
+<meta name="description" content="Download or install GANI from the official GANI website.">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="icon-192.png">
 <style>
@@ -12,31 +13,32 @@
 </style>
 </head>
 <body><main><section class="shell">
-<div class="brand"><img src="assets/gani-official-v34.png" alt="GANI"><div><b>GANI</b><small>SMART PLATFORM</small></div></div>
+<div class="brand"><img src="assets/gani-official-v34.png" alt="GANI"><div><b>GANI</b></div></div>
 <p class="eyebrow">OFFICIAL GANI DOWNLOAD</p>
 <h1>Hal link.<br><em>Qalab kasta.</em></h1>
 <p>Taabo badhanka. GANI wuxuu qalabkaaga siinayaa jidka ugu habboon ee isla website-kan.</p>
-<a class="download" id="androidDownload" href="download/GANI-Android.apk" download="GANI-Android.apk">Download GANI ↓</a>
+<a class="download" id="androidDownload" href="download/GANI-Android.apk" download="GANI-Android.apk" hidden>Download GANI ↓</a>
 <button class="download" id="pwaInstall" hidden>Install GANI ↓</button>
 <a class="open" id="openGani" href="index.html" hidden>Open GANI →</a>
 <a class="secondary" id="directWeb" href="index.html">Use GANI on the Web</a>
 <div class="device" id="deviceInfo"><b>Checking your device…</b></div>
 <div class="trust"><span><b>Official</b>GANI source</span><span><b>HTTPS</b>Secure delivery</span><span><b>Global</b>Web fallback</span></div>
-<p class="foot">GANI · Global Markets. Brighter Opportunities.</p>
+<p class="foot">GANI</p>
 </section></main>
 <script>
-let deferredPrompt=null;
+let deferredPrompt=null, apkReady=false;
 const ua=navigator.userAgent||'';
 const android=/Android/i.test(ua), ios=/iPhone|iPad|iPod/i.test(ua);
 const apk=document.getElementById('androidDownload'), install=document.getElementById('pwaInstall'), open=document.getElementById('openGani'), info=document.getElementById('deviceInfo');
 function setMode(){
- if(android){apk.hidden=false;install.hidden=true;open.hidden=true;info.innerHTML='<b>Android.</b> Download GANI wuxuu APK-ga si toos ah ugu dirayaa Downloads-ka qalabkaaga.';return}
+ if(android&&apkReady){apk.hidden=false;install.hidden=true;open.hidden=true;info.innerHTML='<b>Android.</b> Taabo Download GANI; application-ku wuxuu si toos ah u gelayaa Downloads-ka qalabkaaga.';return}
  apk.hidden=true;
  if(ios){install.hidden=true;open.hidden=false;info.innerHTML='<b>iPhone / iPad.</b> GANI wuxuu isla website-kan uga shaqaynayaa web app ahaan. iOS ayaa maamula habka Add to Home Screen.';return}
  if(deferredPrompt){install.hidden=false;open.hidden=true;info.innerHTML='<b>Installable device.</b> Taabo Install GANI si browser-ku ugu daro app-ka qalabkan.';return}
- install.hidden=true;open.hidden=false;info.innerHTML='<b>Web / desktop.</b> GANI wuxuu isla markiiba uga shaqaynayaa browser-kan.';
+ install.hidden=true;open.hidden=false;info.innerHTML=android?'<b>GANI.</b> APK-ga wali server-ka lagama helin; hadda GANI ka fur web-ka, ama dib u hubi marka APK-ga la daabaco.':'<b>Web / desktop.</b> GANI wuxuu isla markiiba uga shaqaynayaa browser-kan.';
 }
 addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e;setMode()});
 install.addEventListener('click',async()=>{if(!deferredPrompt){open.click();return}await deferredPrompt.prompt();await deferredPrompt.userChoice;deferredPrompt=null;setMode()});
+fetch('download/GANI-Android.apk',{method:'HEAD',cache:'no-store'}).then(r=>{apkReady=r.ok;setMode()}).catch(()=>setMode());
 setMode();
 </script></body></html>
