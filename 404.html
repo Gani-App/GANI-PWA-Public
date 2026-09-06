@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="so">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#020713">
+<meta name="color-scheme" content="dark">
+<title>GANI • Smart Platform</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="assets/gani-logo.png">
+<link rel="stylesheet" href="styles.css">
+<script src="gani-config.js" defer></script>
+<script src="mock-api.js" defer></script>
+<script src="mock-compat.js" defer></script>
+<script src="real-api-client.js" defer></script>
+<script src="api-mode-router.js" defer></script>
+<script src="data-adapter.js" defer></script>
+<script src="app.js" defer></script>
+</head>
+<body>
+<div class="ambient" aria-hidden="true"><i></i><i></i><i></i></div>
+
+<header class="app-header">
+  <a class="brand" href="#home" data-screen="home" aria-label="GANI Home">
+    <img src="assets/gani-logo.png" alt="GANI">
+    <span><b>GANI</b><small>SMART PLATFORM</small></span>
+  </a>
+  <nav class="desktop-nav" aria-label="Main navigation">
+    <button data-screen="home" class="active"><span>Home</span></button>
+    <button data-screen="discover"><span>Trading</span></button>
+    <button data-screen="dashboard"><span>Analytics</span></button>
+    <button data-screen="verify"><span>Tools</span></button>
+    <button data-screen="education"><span>Education</span></button>
+    <button data-screen="support"><span>Support</span></button>
+  </nav>
+  <div class="header-actions">
+    <button class="round-btn" id="searchToggle" aria-label="Search"><span class="icon-search"></span></button>
+    <button class="text-btn desktop-only" data-screen="profile">Login</button>
+    <button class="primary compact desktop-only" data-screen="discover">Get Started</button>
+    <button class="round-btn" id="noticeToggle" aria-label="Notifications"><span class="icon-bell"></span><i id="noticeDot"></i></button>
+    <button class="round-btn menu-btn" id="menuToggle" aria-label="Menu"><span class="icon-menu"></span></button>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu" aria-label="Mobile menu">
+  <button data-screen="home"><span>⌂</span> Home</button>
+  <button data-screen="discover"><span>▥</span> Trading</button>
+  <button data-screen="dashboard"><span>⌁</span> Analytics</button>
+  <button data-screen="verify"><span>✓</span> Tools</button>
+  <button data-screen="education"><span>◇</span> Education</button>
+  <button data-screen="support"><span>◉</span> Support</button>
+  <button data-screen="profile"><span>●</span> Account</button>
+</div>
+
+<div class="search-panel" id="searchPanel">
+  <div class="search-shell"><span class="icon-search"></span><input id="globalSearch" placeholder="Search GANI…" autocomplete="off"><button id="searchClose" aria-label="Close">×</button></div>
+  <small>Try: Trading, account, verify, education, support</small>
+</div>
+
+<aside class="notice-panel" id="noticePanel" aria-label="Notifications">
+  <div class="panel-head"><div><small>GANI CENTER</small><h3>Notifications</h3></div><button id="noticeClose" aria-label="Close">×</button></div>
+  <div id="noticeList" class="notice-list"><div class="skeleton"></div></div>
+</aside>
+
+<main>
+<section class="screen active home-screen" id="home" data-title="Home">
+  <section class="mobile-app-home" aria-label="GANI mobile home">
+    <div class="mobile-welcome"><div><p>Welcome to GANI</p><h1>Smarter <em>control.</em></h1></div><span class="mode-badge" id="mobileMode">Checking…</span></div>
+    <article class="mobile-hero">
+      <div class="mobile-hero-copy"><small>DISCIPLINE • ANALYZE • GROW</small><h2>Trade Smarter<br>With <em>GANI</em></h2><p>Advanced tools, clear insights and a guided customer workspace.</p><button class="primary" data-screen="discover">Get Started →</button><div class="mobile-trust"><span>✓ Secure</span><span>ϟ Fast</span><span>▥ Clear</span></div></div>
+      <img src="assets/gani-logo.png" alt="GANI lion">
+    </article>
+    <div class="mobile-section-head"><h3>Explore GANI</h3><small>Everything in one place</small></div>
+    <div class="mobile-feature-grid">
+      <button data-screen="discover"><span class="mi">▥</span><b>Market<br>Analysis</b><small>Discover</small></button>
+      <button data-screen="dashboard"><span class="mi">⌁</span><b>Account<br>Analytics</b><small>Insights</small></button>
+      <button data-screen="verify"><span class="mi">✓</span><b>Verify<br>Tools</b><small>Protected</small></button>
+      <button data-screen="education"><span class="mi">◇</span><b>Education</b><small>Learn</small></button>
+      <button data-screen="support"><span class="mi">◉</span><b>Support</b><small>Help</small></button>
+      <button data-screen="profile"><span class="mi">●</span><b>Account</b><small>Profile</small></button>
+    </div>
+    <div class="mobile-section-head"><h3>Platform overview</h3><small><span class="app-status-dot"></span> <span id="mobileDataLabel">Data</span></small></div>
+    <section class="mobile-market">
+      <div class="mobile-market-head"><b>GANI Overview</b><span><i class="app-status-dot"></i> Active</span></div>
+      <div class="mobile-market-grid">
+        <article><small>MARKETPLACE</small><b id="mobileMarketCount">—</b><em>records</em></article>
+        <article><small>ACCOUNTS</small><b id="mobileAccountCount">—</b><em>available</em></article>
+        <article><small>NOTICES</small><b id="mobileNoticeCount">—</b><em>unread</em></article>
+      </div>
+    </section>
+    <div class="mobile-command-strip"><article><small>SYSTEM STATUS</small><b>Customer workspace ready</b><div class="progress"><i></i></div></article><article><small>SECURITY</small><b>Protected data boundary</b><div class="progress"><i style="width:92%"></i></div></article></div>
+  </section>
+  <section class="hero-card">
+    <div class="hero-grid"></div>
+    <div class="hero-copy">
+      <p class="eyebrow">DISCIPLINE <span>•</span> ANALYZE <span>•</span> GROW</p>
+      <h1>Trade Smarter<br>With <em>GANI</em></h1>
+      <p class="lead">Advanced tools. Clear insights.<br>Your success, our priority.</p>
+      <div class="hero-actions">
+        <button class="primary hero-primary" data-screen="discover">Get Started <span>→</span></button>
+        <button class="secondary" data-screen="education"><span class="play">▶</span> Learn More</button>
+      </div>
+      <div class="trust-row" aria-label="Platform qualities">
+        <span><i class="mini-icon shield-icon">✓</i><b>Secure</b></span>
+        <span><i class="mini-icon bolt-icon">ϟ</i><b>Fast</b></span>
+        <span><i class="mini-icon chart-icon">▥</i><b>Reliable</b></span>
+      </div>
+    </div>
+    <div class="hero-visual" aria-label="GANI brand visual">
+      <div class="hero-orbit orbit-one"></div><div class="hero-orbit orbit-two"></div>
+      <img src="assets/gani-logo.png" alt="GANI lion logo">
+      <div class="data-float">
+        <span class="bars-symbol">▥</span>
+        <b id="heroMode">Checking…</b>
+        <small>Customer data mode</small>
+      </div>
+      <div class="visual-caption">More than a platform</div>
+    </div>
+  </section>
+
+  <section class="quick-actions" aria-label="Quick actions">
+    <button data-screen="discover"><span class="quick-icon">▥</span><b>Market<br>Analysis</b><i>→</i></button>
+    <button data-screen="dashboard"><span class="quick-icon">⌁</span><b>Account<br>Insights</b><i>→</i></button>
+    <button data-screen="verify"><span class="quick-icon">✓</span><b>Verify<br>Reference</b><i>→</i></button>
+    <button data-screen="education"><span class="quick-icon">◇</span><b>Learn<br>GANI</b><i>→</i></button>
+    <button data-screen="support"><span class="quick-icon">◉</span><b>Get<br>Support</b><i>→</i></button>
+  </section>
+
+  <section class="home-grid">
+    <article class="feature-card featured">
+      <div class="feature-top"><span class="feature-icon">▥</span><span class="status-pill"><i></i> Ready</span></div>
+      <h3>Market Analysis</h3><p>Compare marketplace records from a clean, guided workspace.</p>
+      <button class="card-link" data-screen="discover">Explore market <span>→</span></button>
+    </article>
+    <article class="feature-card">
+      <div class="feature-top"><span class="feature-icon">⌁</span><span class="status-pill neutral">Read only</span></div>
+      <h3>Account Analytics</h3><p>See account and notification information without hunting through menus.</p>
+      <button class="card-link" data-screen="dashboard">Open analytics <span>→</span></button>
+    </article>
+    <article class="feature-card">
+      <div class="feature-top"><span class="feature-icon">✓</span><span class="status-pill neutral">Protected</span></div>
+      <h3>Secure Verification</h3><p>Check GANI references through the active customer data source.</p>
+      <button class="card-link" data-screen="verify">Verify now <span>→</span></button>
+    </article>
+    <article class="feature-card">
+      <div class="feature-top"><span class="feature-icon">◉</span><span class="status-pill neutral">Guided</span></div>
+      <h3>Support & Education</h3><p>Simple explanations and task-based help, arranged by what you need to do.</p>
+      <button class="card-link" data-screen="support">Get help <span>→</span></button>
+    </article>
+  </section>
+
+  <section class="overview-card">
+    <div class="overview-head"><div><small>PLATFORM OVERVIEW</small><h3>Everything important, one glance.</h3></div><span class="connection-state"><i></i><b id="marketStripMode">Loading</b></span></div>
+    <div class="overview-metrics">
+      <div><span class="metric-icon">▦</span><p><small>MARKETPLACE</small><b id="homeMarketCount">—</b><em>records</em></p></div>
+      <div><span class="metric-icon">◎</span><p><small>ACCOUNTS</small><b id="homeAccountCount">—</b><em>available</em></p></div>
+      <div><span class="metric-icon">◌</span><p><small>NOTICES</small><b id="homeNoticeCount">—</b><em>unread</em></p></div>
+      <div><span class="metric-icon">✓</span><p><small>VERIFY</small><b>READY</b><em>reference tool</em></p></div>
+      <div><span class="metric-icon">⌁</span><p><small>DATA MODE</small><b id="homeMode">—</b><em>active source</em></p></div>
+    </div>
+  </section>
+
+  <section class="proof-row">
+    <div><span>◉</span><p><b>Customer-first</b><small>Clear visual hierarchy</small></p></div>
+    <div><span>◎</span><p><b>Responsive</b><small>Web • Android • iOS</small></p></div>
+    <div><span>✓</span><p><b>Protected</b><small>No frontend secrets</small></p></div>
+    <div><span>▥</span><p><b>One system</b><small>Consistent everywhere</small></p></div>
+  </section>
+</section>
+
+<section class="screen" id="discover" data-title="Trading">
+  <header class="page-intro"><div><p class="eyebrow">GANI MARKETPLACE</p><h2>Find what matters.<br><em>Skip the noise.</em></h2><p>Search and compare records in one guided view.</p></div><div class="page-symbol">▥</div></header>
+  <section class="workflow-strip" aria-label="Marketplace workflow">
+    <div class="active"><span>1</span><p><b>Discover</b><small>Find records</small></p></div><i>→</i>
+    <div><span>2</span><p><b>Compare</b><small>Read details</small></p></div><i>→</i>
+    <div><span>3</span><p><b>Verify</b><small>Check reference</small></p></div>
+  </section>
+  <div class="toolbar"><label class="searchbox"><span class="icon-search"></span><input id="marketSearch" placeholder="Search marketplace"></label><div class="mode-pill" id="marketMode">DATA MODE</div></div>
+  <div id="marketGrid" class="market-grid"><article class="loading-card"><div class="skeleton"></div></article></div>
+</section>
+
+<section class="screen" id="dashboard" data-title="Analytics">
+  <header class="page-intro inline-intro"><div><p class="eyebrow">GANI ANALYTICS</p><h2>Your account,<br><em>made readable.</em></h2><p>The important signals first, detail second.</p></div><button class="secondary refresh-btn" id="refreshDashboard">↻ Refresh</button></header>
+  <section class="metric-grid">
+    <article><span class="metric-icon">◎</span><p><small>ACCOUNTS</small><b id="accountCount">—</b><em>Available</em></p></article>
+    <article><span class="metric-icon">◌</span><p><small>UNREAD</small><b id="unreadCount">—</b><em>Notifications</em></p></article>
+    <article><span class="metric-icon">⌁</span><p><small>DATA MODE</small><b id="dashMode">—</b><em>Current source</em></p></article>
+  </section>
+  <div class="dashboard-grid">
+    <article class="panel"><div class="panel-head"><div><small>YOUR SPACE</small><h3>Accounts</h3></div><span class="status-pill neutral">Customer</span></div><div id="accountList" class="account-list"><div class="skeleton"></div></div></article>
+    <article class="panel"><div class="panel-head"><div><small>ACTIVITY</small><h3>Notifications</h3></div><button class="card-link" id="markAllRead">Mark visible read</button></div><div id="dashboardNotices" class="notice-list"><div class="skeleton"></div></div></article>
+  </div>
+</section>
+
+<section class="screen" id="verify" data-title="Tools">
+  <div class="tool-layout">
+    <div class="tool-copy"><p class="eyebrow">GANI TOOLS</p><h2>Verify before<br><em>you rely.</em></h2><p>One reference. One clear result.</p>
+      <div class="verify-box"><label for="verifyInput">GANI reference</label><div class="verify-row"><input id="verifyInput" placeholder="GANI-12345"><button class="primary" id="verifyBtn">Verify <span>→</span></button></div><small>Local mode results are demo-only.</small></div>
+      <div class="tool-steps"><div><span>1</span><p><b>Enter</b><small>Reference</small></p></div><div><span>2</span><p><b>Check</b><small>Source</small></p></div><div><span>3</span><p><b>Understand</b><small>Result</small></p></div></div>
+    </div>
+    <div class="verify-result" id="verifyResult"><div class="verify-ring"><span>✓</span></div><small>VERIFICATION</small><h3>Ready to verify</h3><p>Your result will appear here.</p></div>
+  </div>
+</section>
+
+<section class="screen" id="education" data-title="Education">
+  <header class="page-intro"><div><p class="eyebrow">GANI EDUCATION</p><h2>Understand first.<br><em>Use confidently.</em></h2><p>Four short paths instead of a wall of documentation.</p></div><div class="page-symbol">◇</div></header>
+  <div class="education-grid">
+    <article><span class="lesson-no">01</span><div class="lesson-icon">▥</div><h3>Marketplace</h3><p>Recognize the fields that matter when comparing records.</p><button data-screen="discover">Open Trading →</button></article>
+    <article><span class="lesson-no">02</span><div class="lesson-icon">✓</div><h3>Verification</h3><p>Understand reference status and why source mode matters.</p><button data-screen="verify">Open Tools →</button></article>
+    <article><span class="lesson-no">03</span><div class="lesson-icon">◎</div><h3>Account data</h3><p>Read account and notification information at a glance.</p><button data-screen="dashboard">Open Analytics →</button></article>
+    <article><span class="lesson-no">04</span><div class="lesson-icon">◇</div><h3>Security model</h3><p>Know what stays in the app and what belongs server-side.</p><button data-screen="support">Security help →</button></article>
+  </div>
+</section>
+
+<section class="screen" id="support" data-title="Support">
+  <header class="page-intro"><div><p class="eyebrow">GANI SUPPORT</p><h2>Help without<br><em>the maze.</em></h2><p>Choose the problem visually. The system takes you to the right place.</p></div><div class="page-symbol">◉</div></header>
+  <div class="support-grid">
+    <article><div class="support-icon">▥</div><div><small>01</small><h3>Using GANI</h3><p>Where to find marketplace, analytics and verification.</p></div><button data-screen="education">Learn →</button></article>
+    <article><div class="support-icon">◇</div><div><small>02</small><h3>Data & security</h3><p>Understand real mode, demo mode and protected credentials.</p></div><button data-screen="education">Read →</button></article>
+    <article><div class="support-icon">⌁</div><div><small>03</small><h3>Offline & PWA</h3><p>How the app shell behaves when installed or offline.</p></div><button data-screen="home">Home →</button></article>
+  </div>
+</section>
+
+<section class="screen" id="profile" data-title="Account">
+  <header class="page-intro account-intro"><div><p class="eyebrow">GANI ACCOUNT</p><h2>Your identity,<br><em>at a glance.</em></h2><p>Read-only customer profile and source status.</p></div></header>
+  <div class="profile-layout">
+    <article class="profile-card">
+      <div class="profile-glow"></div><div class="avatar"><img src="assets/gani-logo.png" alt="GANI"></div>
+      <span class="status-pill profile-status" id="verifiedBadge">Status</span><h2 id="profileName">GANI User</h2><p id="profileState">Loading profile…</p>
+      <div class="profile-actions"><button class="primary" data-screen="dashboard">View analytics</button><button class="secondary" data-screen="support">Support</button></div>
+    </article>
+    <article class="panel profile-details"><div class="panel-head"><div><small>ACCOUNT OVERVIEW</small><h3>Profile details</h3></div><span class="status-pill neutral" id="profileMode">Mode</span></div>
+      <dl><div><dt>Name</dt><dd id="profileName2">—</dd></div><div><dt>User ID</dt><dd id="profileId">—</dd></div><div><dt>Verification</dt><dd id="profileVerified">—</dd></div><div><dt>Data source</dt><dd id="profileSource">—</dd></div></dl>
+      <div class="info-note"><span>i</span><p><b>Read-only by design</b><small>Profile editing is hidden because the current backend contract has no profile-write endpoint.</small></p></div>
+    </article>
+  </div>
+</section>
+</main>
+
+<nav class="bottom-nav" aria-label="Mobile navigation">
+  <button class="active" data-screen="home"><span>⌂</span><small>Home</small></button>
+  <button data-screen="discover"><span>▥</span><small>Trading</small></button>
+  <button data-screen="dashboard"><span>⌁</span><small>Analytics</small></button>
+  <button data-screen="verify"><span>✓</span><small>Tools</small></button>
+  <button data-screen="profile"><span>●</span><small>Account</small></button>
+</nav>
+
+<footer>
+  <a class="brand" href="#home" data-screen="home"><img src="assets/gani-logo.png" alt="GANI"><span><b>GANI</b><small>SMART PLATFORM</small></span></a>
+  <p>DISCIPLINE <span>•</span> ANALYZE <span>•</span> GROW</p><small>© 2026 GANI</small>
+</footer>
+<div class="toast" id="toast"></div>
+</body>
+</html>
