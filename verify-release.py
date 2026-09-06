@@ -7,7 +7,7 @@ required=["index.html","install.html","download.html","manifest.webmanifest","sw
           "platform-v27.css","platform-v27.js","platform-v28.css",
           "platform-v29.css","platform-v29.js","platform-v30.css",
           "platform-v31.css","platform-v32.css","platform-v33.css",
-          "platform-v34.css","platform-v37.css","robots.txt","sitemap.xml",
+          "platform-v34.css","platform-v37.css","platform-v38.css","platform-v39.css","robots.txt","sitemap.xml",
           "assets/gani-market-mountains-v29.png",
           "assets/gani-logo-transparent-v30.png",
           "assets/gani-app-icon-v31.png","assets/gani-official-v34.png"]

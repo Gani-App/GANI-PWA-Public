@@ -2,7 +2,8 @@
 <html lang="so">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="mobile-web-app-capable" content="yes">
 <meta name="theme-color" content="#020713">
 <meta name="color-scheme" content="dark">
 <title>GANI</title>
@@ -21,6 +22,8 @@
 <link rel="stylesheet" href="platform-v33.css">
 <link rel="stylesheet" href="platform-v34.css">
 <link rel="stylesheet" href="platform-v37.css">
+<link rel="stylesheet" href="platform-v38.css">
+<link rel="stylesheet" href="platform-v39.css">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"GANI","url":"https://gaani367-boop.github.io/GANI-PWA-Public/","logo":"https://gaani367-boop.github.io/GANI-PWA-Public/icon-512.png"}</script>
 <script src="gani-config.js" defer></script>
 <script src="mock-api.js" defer></script>
@@ -53,7 +56,7 @@
   <div class="header-actions">
     <button class="round-btn" id="searchToggle" aria-label="Search"><span class="icon-search"></span></button>
     <button class="text-btn desktop-only" data-screen="profile">Login</button>
-    <button class="primary compact desktop-only" data-screen="discover">Get Started</button>
+    <a class="primary compact desktop-only gani-download-link" href="download.html">Download GANI</a>
     <button class="round-btn" id="noticeToggle" aria-label="Notifications"><span class="icon-bell"></span><i id="noticeDot"></i></button>
     <button class="round-btn menu-btn" id="menuToggle" aria-label="Menu"><span class="icon-menu"></span></button>
   </div>
@@ -88,8 +91,9 @@
   <section class="mobile-app-home" aria-label="GANI mobile home">
     <div class="mobile-welcome"><div><p>Welcome to GANI</p><h1>Smarter <em>control.</em></h1></div><span class="mode-badge" id="mobileMode">Checking…</span></div>
     <article class="mobile-hero">
-      <div class="mobile-hero-copy"><small>GANI</small><h2>Trade Smarter.<br><em>Grow Stronger.</em></h2><p>Markets, analytics and trusted tools in one secure place.</p><div class="mobile-hero-actions"><a class="primary gani-download-link" href="download.html">Download GANI <span>↓</span></a><button class="secondary" data-screen="discover">Explore Markets</button></div><div class="mobile-trust"><span>✓ Secure</span><span>▥ Market Data</span><span>♙ Trusted Tools</span><span>◎ Global Access</span></div></div>
+      <div class="mobile-hero-copy"><small>GANI</small><h2>Trade Smarter.<br><em>Grow Stronger.</em></h2><p>Markets, analytics and trusted tools in one secure place.</p><div class="mobile-hero-actions"><a class="primary gani-download-link" href="download.html">Download GANI <span>↓</span></a><button class="secondary" data-screen="discover">Explore Markets</button></div></div>
       <img src="assets/gani-official-v34.png" alt="GANI">
+      <div class="mobile-trust"><span>✓ Secure</span><span>▥ Market Data</span><span>♙ Trusted Tools</span><span>◎ Global Access</span></div>
     </article>
     <div class="mobile-section-head market-heading"><h3>Market Snapshot</h3><button data-screen="discover"><span class="app-status-dot"></span> Live Markets ›</button></div>
     <section class="mobile-market">
@@ -107,10 +111,21 @@
       <button data-screen="education"><span class="mi">◇</span><b>Education</b><small>Learn and grow <i>›</i></small></button>
     </div>
     <div class="mobile-section-head insights-heading"><h3>Latest Insights</h3><button data-screen="education">View all ›</button></div>
+    <div class="mobile-insights-grid">
     <section class="mobile-insight" data-screen="education" role="button" tabindex="0">
       <div class="insight-image" aria-hidden="true"></div>
       <div class="insight-copy"><div><span>MARKET ANALYSIS</span><time>2h ago</time></div><h4>Global Markets Steady as Investors Eye Central Bank Signals</h4><p>Key indices hold gains amid a balanced outlook for the coming period.</p></div>
       <b aria-hidden="true">›</b>
+    </section>
+    <section class="mobile-insight second-insight" data-screen="education" role="button" tabindex="0">
+      <div class="insight-image" aria-hidden="true"></div>
+      <div class="insight-copy"><div><span>GANI INSIGHT</span><time>5h ago</time></div><h4>Fursadaha suuqa oo hal meel laga fahmi karo</h4><p>Macluumaad kooban oo kaa caawinaya inaad xogta si cad u akhrido.</p></div>
+      <b aria-hidden="true">›</b>
+    </section>
+    </div>
+    <section class="gani-install-banner" aria-label="Download GANI">
+      <div><small>GANI APP</small><h3>GANI meel kasta kula soco.</h3><p>Hal application oo kuu keenaya suuqyada, falanqaynta, xaqiijinta iyo account-kaaga.</p><div><a class="primary gani-download-link" href="download.html">Download GANI ↓</a><a class="secondary gani-download-link" href="index.html">Open Web App</a></div></div>
+      <img src="assets/gani-official-v34.png" alt="GANI application">
     </section>
     <div class="mobile-runtime-data" hidden><span id="mobileDataLabel">Data</span><b id="mobileMarketCount">—</b><b id="mobileAccountCount">—</b><b id="mobileNoticeCount">—</b></div>
     <div class="mobile-command-strip"><article><small>SYSTEM STATUS</small><b>Customer workspace ready</b><div class="progress"><i></i></div></article><article><small>SECURITY</small><b>Protected data boundary</b><div class="progress"><i style="width:92%"></i></div></article></div>
