@@ -10,8 +10,80 @@
   }
   window.GANI_DATA={
     isProductionConfigured(){return !!cfg().API_BASE_URL},
-    profile(){return this.isProductionConfigured()?request("/api/v1/me"):GANI_MOCK_API.getProfile()},
-    accounts(){return this.isProductionConfigured()?request("/api/v1/accounts"):GANI_MOCK_API.getAccounts()},
-    notifications(){return this.isProductionConfigured()?request("/api/v1/notifications"):GANI_MOCK_API.getNotifications()}
+    profile(){return window.GANIDataSource.me()},
+    accounts(){return window.GANIDataSource.accounts()},
+    notifications(){return window.GANIDataSource.notifications()}
   };
 })();
+
+/*
+ * GANI unified customer data boundary.
+ *
+ * All new customer-data consumers use GANIAppData.
+ * GANIDataSource chooses real or mock mode.
+ * Existing presentation helpers remain compatible.
+ */
+(function (global) {
+  "use strict";
+
+  function source() {
+    if (!global.GANIDataSource) {
+      throw new Error(
+        "GANIDataSource is not available"
+      );
+    }
+
+    return global.GANIDataSource;
+  }
+
+  const appData = {
+    mode() {
+      return source().mode();
+    },
+
+    isReal() {
+      return source().isReal();
+    },
+
+    health() {
+      return source().health();
+    },
+
+    me() {
+      return source().me();
+    },
+
+    accounts() {
+      return source().accounts();
+    },
+
+    notifications() {
+      return source().notifications();
+    },
+
+    markNotificationRead(id) {
+      return source().markNotificationRead(id);
+    },
+
+    marketplace() {
+      return source().marketplace();
+    },
+
+    verify(reference) {
+      return source().verify(reference);
+    }
+  };
+
+  global.GANIAppData = appData;
+
+  global.dispatchEvent(
+    new CustomEvent(
+      "gani:data-ready",
+      {
+        detail: {
+          mode: appData.mode()
+        }
+      }
+    )
+  );
+})(window);

@@ -1,8 +1,8 @@
 {
   "id": "./",
-  "name": "GANI",
+  "name": "GANI Smart Platform",
   "short_name": "GANI",
-  "description": "GANI customer app — raadi, xaqiiji, barbar dhig oo maamul.",
+  "description": "GANI responsive customer platform for marketplace discovery, analytics, verification, education, support and account overview.",
   "lang": "so",
   "dir": "ltr",
   "start_url": "./index.html?source=app",
@@ -13,9 +13,9 @@
     "standalone",
     "minimal-ui"
   ],
-  "orientation": "portrait-primary",
-  "background_color": "#f4f8fd",
-  "theme_color": "#061b3b",
+  "orientation": "any",
+  "background_color": "#010713",
+  "theme_color": "#020a17",
   "categories": [
     "business",
     "productivity",
@@ -43,24 +43,24 @@
   ],
   "shortcuts": [
     {
-      "name": "Raadi",
-      "short_name": "Raadi",
-      "url": "./index.html#marketplace"
+      "name": "Trading",
+      "short_name": "Trading",
+      "url": "./index.html#discover"
     },
     {
-      "name": "Xaqiiji",
-      "short_name": "Xaqiiji",
-      "url": "./index.html#xaqiijin"
+      "name": "Analytics",
+      "short_name": "Analytics",
+      "url": "./index.html#dashboard"
     },
     {
-      "name": "Dashboard",
-      "short_name": "Dashboard",
-      "url": "./index.html#portal"
+      "name": "Tools",
+      "short_name": "Tools",
+      "url": "./index.html#verify"
     },
     {
-      "name": "Caawimo",
-      "short_name": "Caawimo",
-      "url": "./index.html#faq"
+      "name": "Account",
+      "short_name": "Account",
+      "url": "./index.html#profile"
     }
   ]
 }
