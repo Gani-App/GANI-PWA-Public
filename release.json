@@ -1,9 +1,9 @@
 {
   "product": "GANI",
-  "release": "2026.09-exact-mobile-home",
-  "status": "COMPLETE_PLATFORM_SOURCE_READY",
-  "version": "33.0.0",
-  "android_version_code": 33,
+  "release": "2026.09-three-task-authoritative",
+  "status": "THREE_TASK_RELEASE_READY",
+  "version": "34.0.0",
+  "android_version_code": 34,
   "surfaces": [
     "HTTPS PWA",
     "Android application source",
