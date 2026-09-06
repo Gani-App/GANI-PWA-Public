@@ -1,9 +1,9 @@
 {
   "product": "GANI",
-  "release": "2026.09-reference-platform",
+  "release": "2026.09-seamless-reference-platform",
   "status": "COMPLETE_PLATFORM_SOURCE_READY",
-  "version": "29.0.0",
-  "android_version_code": 29,
+  "version": "30.0.0",
+  "android_version_code": 30,
   "surfaces": [
     "HTTPS PWA",
     "Android application source",
