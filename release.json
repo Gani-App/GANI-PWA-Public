@@ -1,9 +1,9 @@
 {
   "product": "GANI",
-  "release": "2026.09-market-home",
+  "release": "2026.09-exact-mobile-home",
   "status": "COMPLETE_PLATFORM_SOURCE_READY",
-  "version": "32.0.0",
-  "android_version_code": 32,
+  "version": "33.0.0",
+  "android_version_code": 33,
   "surfaces": [
     "HTTPS PWA",
     "Android application source",

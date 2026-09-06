@@ -6,7 +6,7 @@ required=["index.html","install.html","manifest.webmanifest","sw.js",
           "icon-192.png","icon-512.png","icon-maskable-512.png","release.json",
           "platform-v27.css","platform-v27.js","platform-v28.css",
           "platform-v29.css","platform-v29.js","platform-v30.css",
-          "platform-v31.css","platform-v32.css",
+          "platform-v31.css","platform-v32.css","platform-v33.css",
           "assets/gani-market-mountains-v29.png",
           "assets/gani-logo-transparent-v30.png",
           "assets/gani-app-icon-v31.png"]
