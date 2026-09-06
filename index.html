@@ -9,6 +9,7 @@
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" href="assets/gani-logo.png">
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="platform-v27.css">
 <script src="gani-config.js" defer></script>
 <script src="mock-api.js" defer></script>
 <script src="mock-compat.js" defer></script>
@@ -16,6 +17,7 @@
 <script src="api-mode-router.js" defer></script>
 <script src="data-adapter.js" defer></script>
 <script src="app.js" defer></script>
+<script src="platform-v27.js" defer></script>
 </head>
 <body>
 <div class="ambient" aria-hidden="true"><i></i><i></i><i></i></div>
@@ -32,6 +34,8 @@
     <button data-screen="verify"><span>Tools</span></button>
     <button data-screen="education"><span>Education</span></button>
     <button data-screen="support"><span>Support</span></button>
+    <button data-screen="services"><span>Adeegyada</span></button>
+    <button data-screen="workspace"><span>Xarunta</span></button>
   </nav>
   <div class="header-actions">
     <button class="round-btn" id="searchToggle" aria-label="Search"><span class="icon-search"></span></button>
@@ -49,6 +53,10 @@
   <button data-screen="verify"><span>✓</span> Tools</button>
   <button data-screen="education"><span>◇</span> Education</button>
   <button data-screen="support"><span>◉</span> Support</button>
+  <button data-screen="services"><span>◆</span> Adeegyada</button>
+  <button data-screen="workspace"><span>▦</span> Xarunta Macmiilka</button>
+  <button data-screen="partners"><span>◇</span> Partners</button>
+  <button data-screen="agreements"><span>≡</span> Heshiisyada</button>
   <button data-screen="profile"><span>●</span> Account</button>
 </div>
 
@@ -166,6 +174,44 @@
     <div><span>✓</span><p><b>Protected</b><small>No frontend secrets</small></p></div>
     <div><span>▥</span><p><b>One system</b><small>Consistent everywhere</small></p></div>
   </section>
+</section>
+
+<section class="screen v27-screen" id="services" data-title="Adeegyada">
+  <header class="page-intro"><div><p class="eyebrow">GANI SERVICES</p><h2>Dooro sida aad<br><em>u shaqaynayso.</em></h2><p>Saddex waddo oo cad: adigu isticmaal, taageero hel, ama koox ku maamul.</p></div><div class="page-symbol">◆</div></header>
+  <div class="v27-service-grid">
+    <article class="v27-plan"><span>01 / SELF-SERVICE</span><h3>Adiga ayaa maamulaya</h3><p>Raadi adeeg, barbar dhig xeerarka, samee profile, gudbi dalab oo la soco.</p><ul><li>Marketplace iyo favorites</li><li>Eligibility checklist</li><li>Agreements iyo tickets</li><li>Ogeysiisyo la raad-raaco</li></ul><button class="primary v27-start" data-plan="Self-service">Bilow</button></article>
+    <article class="v27-plan featured"><span>02 / GANI ASSIST</span><h3>Diyaarin iyo hagid</h3><p>Waxaan kaa caawinaynaa xogta, dukumentiyada, fahamka heshiiska iyo xiriirka partner-ka.</p><ul><li>Preflight readiness</li><li>Country iyo KYC check</li><li>Rule review</li><li>Escalation support</li></ul><button class="primary v27-start" data-plan="GANI Assist">Codso hagid</button></article>
+    <article class="v27-plan"><span>03 / BUSINESS</span><h3>Koox iyo shirkad</h3><p>Accounts badan, xubno, doorar, oggolaansho iyo warbixin isku xiran.</p><ul><li>Team roles</li><li>Approval workflow</li><li>Company reports</li><li>Partner integrations</li></ul><button class="primary v27-start" data-plan="Business">La hadal GANI</button></article>
+  </div>
+</section>
+
+<section class="screen v27-screen" id="workspace" data-title="Xarunta Macmiilka">
+  <header class="page-intro inline-intro"><div><p class="eyebrow">CUSTOMER WORKSPACE</p><h2>Dalab ilaa payout,<br><em>hal timeline.</em></h2><p>Xogtaada, codsiyadaada, lacagaha iyo taageerada hal meel uga maamul.</p></div><button class="primary" id="newApplication">Dalab cusub</button></header>
+  <div class="v27-kpis"><article><small>DALABYO</small><b id="v27AppCount">0</b><span>La diiwaangeliyey</span></article><article><small>U-QALMITAAN</small><b id="v27ReadyState">0%</b><span>Readiness</span></article><article><small>TICKETS</small><b id="v27TicketCount">0</b><span>La raad-raacayo</span></article><article><small>HESHIISYO</small><b id="v27AgreementCount">0</b><span>La aqbalay</span></article></div>
+  <div class="v27-workspace-grid">
+    <article class="panel"><div class="panel-head"><div><small>U-QALMITAANKA</small><h3>Hubinta ka hor lacag-bixinta</h3></div><span class="status-pill neutral" id="v27ReadinessBadge">Bilow</span></div><form id="readinessForm" class="v27-checklist"><label><input type="checkbox" name="age"> Waxaan buuxiyey da'da adeegga</label><label><input type="checkbox" name="country"> Dalka iyo degenaanshaha waa la oggol yahay</label><label><input type="checkbox" name="kyc"> Dukumentiyada KYC waa diyaar</label><label><input type="checkbox" name="payment"> Habka lacag-bixintu magacayga ayuu ku qoran yahay</label><label><input type="checkbox" name="rules"> Waxaan akhriyey EA, loss iyo payout rules</label><button class="primary">Kaydi readiness</button></form></article>
+    <article class="panel"><div class="panel-head"><div><small>DALABYADA</small><h3>Codsiyadaada</h3></div></div><div id="v27Applications" class="v27-records"><p class="hint">Dalab wali lama samayn.</p></div></article>
+    <article class="panel"><div class="panel-head"><div><small>LACAG & PAYOUT</small><h3>Diiwaanka lacagta</h3></div><button class="card-link" id="addPayment">Ku dar receipt</button></div><div id="v27Payments" class="v27-records"><p class="hint">Diiwaan lacag wali ma jiro.</p></div></article>
+    <article class="panel"><div class="panel-head"><div><small>TAAGEERO</small><h3>Cabasho iyo rafcaan</h3></div><button class="card-link" id="newTicket">Fur ticket</button></div><div id="v27Tickets" class="v27-records"><p class="hint">Ticket wali ma jiro.</p></div></article>
+  </div>
+</section>
+
+<section class="screen v27-screen" id="partners" data-title="Partners">
+  <header class="page-intro"><div><p class="eyebrow">PARTNER PORTAL</p><h2>Xaqiiji shirkadda.<br><em>Kadib daabac.</em></h2><p>Partner kasta wuxuu soo gudbinayaa aqoonsi, adeegyo, waddamo, xeerar, lacag iyo taageero.</p></div><div class="page-symbol">◇</div></header>
+  <div class="v27-partner-layout">
+    <article class="panel"><div class="v27-lifecycle"><div><span>01</span><b>Codsi</b><small>Company profile</small></div><div><span>02</span><b>Xaqiijin</b><small>Entity & domain</small></div><div><span>03</span><b>Heshiis</b><small>SLA & commission</small></div><div><span>04</span><b>Daabacaad</b><small>Offers & countries</small></div><div><span>05</span><b>Kormeer</b><small>Cases & renewal</small></div></div></article>
+    <form class="panel v27-form" id="partnerApply"><h3>Codsiga partnership-ka</h3><div class="v27-fields"><label>Magaca shirkadda<input name="company" required></label><label>Website-ka rasmiga ah<input name="website" type="url" placeholder="https://" required></label><label>Email-ka partnership<input name="email" type="email" required></label><label>Dalalka aad adeegtaan<input name="countries" required></label><label class="full">Qaabka iskaashiga<select name="model" required><option value="">Dooro</option><option>Referral</option><option>Authorized reseller</option><option>Technology integration</option></select></label><label class="full">Taageerada iyo cabashada<textarea name="support" required></textarea></label></div><label class="v27-consent"><input type="checkbox" required> Waxaan diyaar u nahay xaqiijin iyo heshiis qoraal ah.</label><button class="primary">Gudbi codsiga</button></form>
+  </div>
+</section>
+
+<section class="screen v27-screen" id="agreements" data-title="Heshiisyada">
+  <header class="page-intro"><div><p class="eyebrow">RULES & AGREEMENTS</p><h2>Mas'uuliyaddu<br><em>meel cad ayay leedahay.</em></h2><p>Qodob kasta akhri ka hor dalab ama lacag-bixin.</p></div><div class="page-symbol">≡</div></header>
+  <div class="v27-rules-grid" id="v27Rules"></div>
+</section>
+
+<section class="screen v27-screen" id="operations" data-title="Operations">
+  <header class="page-intro"><div><p class="eyebrow">GANI OPERATIONS</p><h2>Wax kasta oo la daabaco<br><em>waa la maamulaa.</em></h2><p>Partners, products, eligibility, cases, finance, content iyo audit.</p></div><div class="page-symbol">▦</div></header>
+  <div class="v27-ops-grid"><article><small>PARTNERS</small><h3>Due diligence</h3><p>Entity, domain, ownership, support iyo heshiis.</p></article><article><small>PRODUCTS</small><h3>Offer control</h3><p>Qiime, drawdown, payout, EA, refund iyo version.</p></article><article><small>COUNTRIES</small><h3>Eligibility matrix</h3><p>Residency, nationality, payment iyo payout.</p></article><article><small>CASES</small><h3>Dispute desk</h3><p>Evidence, response, deadline iyo escalation.</p></article><article><small>FINANCE</small><h3>Reconciliation</h3><p>Orders, receipts, refunds iyo commissions.</p></article><article><small>AUDIT</small><h3>Taariikh sugan</h3><p>Cidda wax beddeshay, goorta iyo sababta.</p></article></div>
 </section>
 
 <section class="screen" id="discover" data-title="Trading">

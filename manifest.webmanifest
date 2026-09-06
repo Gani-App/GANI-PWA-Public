@@ -2,7 +2,7 @@
   "id": "./",
   "name": "GANI Smart Platform",
   "short_name": "GANI",
-  "description": "GANI responsive customer platform for marketplace discovery, analytics, verification, education, support and account overview.",
+  "description": "GANI customer and partner platform for marketplace discovery, eligibility, applications, agreements, payments, support and account management.",
   "lang": "so",
   "dir": "ltr",
   "start_url": "./index.html?source=app",
@@ -61,6 +61,16 @@
       "name": "Account",
       "short_name": "Account",
       "url": "./index.html#profile"
+    },
+    {
+      "name": "Xarunta Macmiilka",
+      "short_name": "Xarunta",
+      "url": "./index.html#workspace"
+    },
+    {
+      "name": "Adeegyada GANI",
+      "short_name": "Adeegyada",
+      "url": "./index.html#services"
     }
   ]
 }

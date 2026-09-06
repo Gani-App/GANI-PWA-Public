@@ -1,9 +1,9 @@
 {
   "product": "GANI",
-  "release": "2026.09-public-ready",
-  "status": "PUBLIC_DISTRIBUTION_SOURCE_READY",
-  "version": "26.0.0",
-  "android_version_code": 26,
+  "release": "2026.09-complete-platform",
+  "status": "COMPLETE_PLATFORM_SOURCE_READY",
+  "version": "27.0.0",
+  "android_version_code": 27,
   "surfaces": [
     "HTTPS PWA",
     "Android application source",
@@ -22,7 +22,12 @@
     "Tools/Verify",
     "Education",
     "Support",
-    "Account/Profile"
+    "Account/Profile",
+    "Services",
+    "Customer Workspace",
+    "Partner Portal",
+    "Rules and Agreements",
+    "Operations"
   ],
   "data_policy": "REAL API only when configured; otherwise clearly identified demo/local mode",
   "public_install_policy": "Do not require users to disable device security. Direct APK sideload is a test artifact, not the public install route.",
