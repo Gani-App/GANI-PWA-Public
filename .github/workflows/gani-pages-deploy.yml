@@ -1,0 +1,38 @@
+name: GANI Public Website
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+    paths:
+      - 'index.html'
+      - 'install.html'
+      - 'download.html'
+      - 'download/**'
+      - 'assets/**'
+      - '*.css'
+      - '*.js'
+      - 'manifest.webmanifest'
+      - 'sw.js'
+      - '.github/workflows/gani-pages-deploy.yml'
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: true
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - name: Deploy public GANI website
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,1 +1,2 @@
-GANI Android APK is generated automatically by GitHub Actions and published here as GANI-Android.apk.
+GANI-Android.apk is published here automatically by GitHub Actions after a successful Android build.
+Stable website path: download/GANI-Android.apk
