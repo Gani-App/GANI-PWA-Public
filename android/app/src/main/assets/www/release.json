@@ -1,13 +1,14 @@
 {
   "product": "GANI",
-  "release": "2026.09-three-task-authoritative",
-  "status": "THREE_TASK_RELEASE_READY",
-  "version": "34.0.0",
+  "release": "2026.09-universal-download",
+  "status": "UNIVERSAL_DOWNLOAD_READY",
+  "version": "35.0.0",
   "android_version_code": 34,
   "surfaces": [
-    "HTTPS PWA",
-    "Android application source",
-    "iOS application source"
+    "HTTPS Web/PWA",
+    "Direct Android APK from GANI website",
+    "iPhone/iPad Web/PWA",
+    "Desktop Web/PWA"
   ],
   "branding": [
     "symbol-only launcher icon",
@@ -30,7 +31,7 @@
     "Operations"
   ],
   "data_policy": "REAL API only when configured; otherwise clearly identified demo/local mode",
-  "public_install_policy": "Do not require users to disable device security. Direct APK sideload is a test artifact, not the public install route.",
+  "public_install_policy": "One official GANI website entry point. Android receives direct APK; iPhone/iPad and desktop receive the supported Web/PWA route automatically.",
   "store_gate": "Store publication still requires the publisher account, signing/review requirements and submission on the chosen authorized store.",
   "pwa_gate": "Deploy the web directory over HTTPS for installable browser/PWA distribution."
 }
