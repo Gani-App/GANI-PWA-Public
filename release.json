@@ -1,9 +1,9 @@
 {
   "product": "GANI",
-  "release": "2026.09-luminous-platform",
+  "release": "2026.09-reference-platform",
   "status": "COMPLETE_PLATFORM_SOURCE_READY",
-  "version": "28.0.0",
-  "android_version_code": 28,
+  "version": "29.0.0",
+  "android_version_code": 29,
   "surfaces": [
     "HTTPS PWA",
     "Android application source",
