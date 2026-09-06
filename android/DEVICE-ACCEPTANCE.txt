@@ -1,0 +1,34 @@
+GANI ANDROID DEVICE ACCEPTANCE
+
+Install/build gate
+[ ] CI build completes
+[ ] app-debug.apk SHA-256 file exists
+[ ] APK installs on Android test device
+[ ] Launcher opens GANI without browser chrome
+
+Core UI
+[ ] Home loads
+[ ] Discover opens
+[ ] Verify opens
+[ ] Dashboard opens
+[ ] Profile opens
+[ ] Android Back returns through app history
+[ ] External HTTPS links open outside the embedded app
+[ ] No horizontal overflow at common phone widths
+[ ] Keyboard does not cover active form controls
+[ ] Bottom navigation does not cover content
+
+Offline/local
+[ ] Bundled UI opens without VPS
+[ ] Local demo profile/accounts/notifications render
+[ ] App relaunch preserves harmless local state
+[ ] Missing production API does not break the shell
+
+Security
+[ ] No API key/password/private key in assets
+[ ] HTTP cleartext blocked
+[ ] Production signing key absent from repository
+[ ] Customer UI contains no privileged server controls
+
+Acceptance result:
+ANDROID_DEVICE_ACCEPTANCE=PASS only after every applicable item above is verified on a real device.

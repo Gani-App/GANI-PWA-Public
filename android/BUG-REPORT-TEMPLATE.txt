@@ -1,0 +1,12 @@
+GANI DEVICE BUG REPORT
+Build/version:
+Android version:
+Device:
+Screen:
+Flow:
+Expected:
+Observed:
+Reproducible: yes/no
+Network: online/offline
+Screenshot/video reference:
+Severity: blocker/high/medium/low

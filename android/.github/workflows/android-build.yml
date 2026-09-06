@@ -1,0 +1,58 @@
+name: GANI Android APK
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: read
+
+jobs:
+  debug-apk:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Java 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Gradle 8.9
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.9'
+
+      - name: Static project checks
+        run: |
+          test -f app/src/main/AndroidManifest.xml
+          test -f app/src/main/java/com/gani/app/MainActivity.kt
+          test -f app/src/main/assets/www/index.html
+          ! grep -R -E 'CAPITAL_API_KEY|CAPITAL_PASSWORD|BEGIN (RSA |OPENSSH )?PRIVATE KEY' app/src/main/assets || exit 1
+
+      - name: Build debug APK
+        run: gradle --no-daemon :app:assembleDebug
+
+      - name: APK checksum and build evidence
+        run: |
+          sha256sum app/build/outputs/apk/debug/app-debug.apk | tee app-debug.apk.sha256
+          {
+            echo "GANI_ANDROID_BUILD=PASS"
+            echo "APK=app/build/outputs/apk/debug/app-debug.apk"
+            echo "SHA256=$(cut -d' ' -f1 app-debug.apk.sha256)"
+          } > android-build-evidence.txt
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: GANI-debug-apk
+          path: |
+            app/build/outputs/apk/debug/app-debug.apk
+            app-debug.apk.sha256
+            android-build-evidence.txt
+          if-no-files-found: error

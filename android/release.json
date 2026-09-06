@@ -1,0 +1,21 @@
+{
+  "release": "GANI v34 Three-Task Authoritative Release",
+  "status": "THREE_TASK_RELEASE_READY",
+  "package": "com.gani.app",
+  "version": "34.0.0",
+  "web_source": "GANI v25 Offline Completion Workspace",
+  "apk_built": false,
+  "reason_apk_not_built": "Android SDK/Gradle build environment not established in current runtime",
+  "local_validation": {
+    "java": "21.0.11",
+    "gradle": false,
+    "android_sdkmanager": false,
+    "apk_built": false
+  },
+  "source_secret_scan": "PASS",
+  "expected_artifact": "GANI-debug-apk/app-debug.apk",
+  "production_vps_required": false,
+  "project_validation": "PASS",
+  "device_acceptance": "PENDING_REAL_DEVICE",
+  "apk_build": "PENDING_CI_RUN"
+}

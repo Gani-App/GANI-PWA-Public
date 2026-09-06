@@ -1,0 +1,23 @@
+GANI v28 CI APK PIPELINE
+
+Purpose:
+Build the debug APK outside the VPS and outside this runtime.
+
+Prepared:
+- Android project
+- Java/Android SDK/Gradle CI provisioning
+- static source checks
+- secret-pattern guard
+- debug APK build
+- SHA-256 checksum
+- downloadable CI artifact
+
+This does NOT require the GANI production VPS.
+The debug APK is for device acceptance testing, not Play Store release signing.
+
+Expected CI artifact:
+GANI-debug-apk
+  app-debug.apk
+  app-debug.apk.sha256
+
+Production signing credentials must never be committed to this project.
