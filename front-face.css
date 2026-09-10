@@ -1,0 +1,758 @@
+/* Front Face: the Owner-supplied transparent crowned lion/G cutout on true black. */
+.front-face-pending{overflow:hidden!important;background:#000!important;color:#f4eee2;-webkit-font-smoothing:antialiased}
+.front-face-pending .ambient{display:none!important}
+.front-face-pending .gani-front-face{box-sizing:border-box;position:fixed;inset:0;z-index:1000;isolation:isolate;display:grid;place-items:center;min-height:100dvh;padding:calc(env(safe-area-inset-top) + clamp(16px,4vh,42px)) max(20px,5vw) calc(env(safe-area-inset-bottom) + clamp(16px,3vh,32px));overflow-x:hidden;overflow-y:auto;background:#000;color:#f4eee2;overscroll-behavior:contain}
+.front-face-pending .gani-front-face::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 50% 17%,rgba(255,213,123,.035),transparent 22%),#000}
+.front-face-pending .app-header,.front-face-pending main,.front-face-pending .bottom-nav,.front-face-pending>footer,.front-face-pending .install-dock{visibility:hidden;pointer-events:none}
+.front-face-pending .front-face-inner{box-sizing:border-box;display:flex;flex-direction:column;align-items:center;justify-content:center;width:min(100%,560px);min-width:0;min-height:100%;padding-block:8px;text-align:center}
+.front-face-pending .front-face-brand{display:flex;flex-direction:column;align-items:center;min-width:0}
+
+/* The image itself is the complete Owner cutout. No painted canvas or rectangle. */
+.front-face-pending .front-face-mark{position:relative;display:block;isolation:isolate;contain:layout paint;flex:0 0 auto;width:clamp(138px,min(30vw,29vh),286px);aspect-ratio:1046/1504;overflow:visible;background:transparent!important;background-color:transparent!important;background-image:none!important;border:0;box-shadow:none}
+.front-face-pending .front-face-mark img{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:contain;background:transparent!important;background-color:transparent!important;background-image:none!important;border:0;box-shadow:none;filter:drop-shadow(0 3px 8px rgba(221,171,75,.12)) saturate(1.18) contrast(1.18) brightness(1.06);opacity:1;visibility:visible;image-rendering:auto}
+
+/* Only this alpha-masked highlight moves; the emblem geometry never moves. */
+.front-face-pending .front-face-mark::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;-webkit-mask-image:url("assets/gani-front-face-crowned-emblem.png");mask-image:url("assets/gani-front-face-crowned-emblem.png");-webkit-mask-mode:alpha;mask-mode:alpha;-webkit-mask-position:center;mask-position:center;-webkit-mask-size:100% 100%;mask-size:100% 100%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;background:linear-gradient(104deg,transparent 0 39%,rgba(255,250,210,.05) 43%,rgba(255,250,210,.76) 47%,rgba(255,218,116,.18) 51%,rgba(255,250,210,.03) 56%,transparent 61%);background-size:220% 100%;background-repeat:no-repeat;mix-blend-mode:screen;will-change:background-position;animation:front-face-reflection 14s ease-in-out infinite}
+@keyframes front-face-reflection{0%,26%{background-position:145% 0}72%,100%{background-position:-45% 0}}
+@keyframes front-face-text-shimmer{0%,30%{background-position:145% 0}70%,100%{background-position:-45% 0}}
+
+.front-face-pending .front-face-brand>span{margin-top:clamp(8px,1.6vh,16px);padding-left:.28em;color:#e8b952;background:linear-gradient(108deg,#b77b20 0%,#f8d987 27%,#fff3bf 39%,#d39b37 52%,#f6d47b 72%,#b77b20 100%);background-size:220% 100%;background-position:145% 0;background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:clamp(2.35rem,6.4vw,4.65rem);font-weight:900;line-height:1;letter-spacing:.28em;white-space:nowrap;animation:front-face-text-shimmer 18s ease-in-out infinite}
+.front-face-pending .front-face-copy{max-width:100%;margin-top:clamp(16px,2.6vh,28px)}
+.front-face-pending .front-face-tagline{margin:0;color:#f2c765;background:linear-gradient(108deg,#c18a2d 0%,#f8d987 30%,#fff3bf 42%,#d39b37 54%,#f4ce72 74%,#c18a2d 100%);background-size:220% 100%;background-position:145% 0;background-clip:text;-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-size:clamp(1.1rem,3.2vw,1.9rem);font-weight:900;line-height:1.22;letter-spacing:.15em;animation:front-face-text-shimmer 18s 3s ease-in-out infinite}
+.front-face-pending .front-face-tagline span,.front-face-pending .front-face-support,.front-face-pending .front-face-pillars{color:#f4eee2}
+.front-face-pending .front-face-support{margin:clamp(12px,1.8vh,18px) 0 0;font-size:clamp(.8rem,1.7vw,.98rem);line-height:1.5}
+.front-face-pending .front-face-pillars{margin:clamp(11px,1.7vh,17px) 0 0;font-size:clamp(.63rem,1.5vw,.78rem);font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.front-face-pending .front-face-pillars i{padding:0 .45em;color:#d9a73f;font-style:normal}
+.front-face-pending .front-face-actions{display:flex;flex-direction:column;align-items:center;width:min(100%,330px);max-width:100%;margin-top:clamp(28px,5.5vh,58px);gap:12px}
+.front-face-pending .front-face-start,.front-face-pending .front-face-signin{box-sizing:border-box;width:100%;min-height:58px;border-radius:9px;padding:0 26px;font-size:1rem;font-weight:800;touch-action:manipulation}
+.front-face-pending .front-face-start{border:1px solid rgba(255,225,153,.52);background:linear-gradient(180deg,#f6d17f 0%,#c68b32 100%);color:#211607;box-shadow:0 10px 28px rgba(192,137,49,.18),inset 0 1px rgba(255,255,255,.55);transition:filter .2s,transform .2s,box-shadow .2s}
+.front-face-pending .front-face-start:hover{filter:brightness(1.06);transform:translateY(-1px);box-shadow:0 13px 32px rgba(192,137,49,.28),inset 0 1px rgba(255,255,255,.62)}
+.front-face-pending .front-face-start:active{transform:translateY(0)}
+.front-face-pending .front-face-signin{border:1px solid #a9823d;background:#000;color:#d9ae58;cursor:not-allowed}
+.front-face-pending .front-face-signin:disabled{opacity:.78}
+
+@media(max-width:560px){.front-face-pending .gani-front-face{padding-inline:20px}.front-face-pending .front-face-mark{width:clamp(138px,47vw,224px)}.front-face-pending .front-face-brand>span{font-size:clamp(2.25rem,10.5vw,3.2rem);letter-spacing:.23em}.front-face-pending .front-face-tagline{font-size:clamp(1.04rem,4.65vw,1.4rem);letter-spacing:.12em}.front-face-pending .front-face-support{font-size:.8rem}.front-face-pending .front-face-pillars{font-size:.61rem;letter-spacing:.07em}.front-face-pending .front-face-actions{width:min(100%,320px);margin-top:clamp(24px,4.8vh,46px);gap:10px}.front-face-pending .front-face-start,.front-face-pending .front-face-signin{min-height:54px}}
+@media(max-width:360px),(max-height:620px){.front-face-pending .gani-front-face{padding-top:10px;padding-bottom:14px}.front-face-pending .front-face-mark{width:138px}.front-face-pending .front-face-brand>span{font-size:2.2rem}.front-face-pending .front-face-copy{margin-top:10px}.front-face-pending .front-face-support{margin-top:8px}.front-face-pending .front-face-pillars{margin-top:8px}.front-face-pending .front-face-actions{margin-top:20px}.front-face-pending .front-face-start,.front-face-pending .front-face-signin{min-height:50px}}
+
+/* Final Home dashboard surface: a single readable rhythm from phone to wide desktop. */
+@media(min-width:800px){
+  .home-screen .mission-dashboard{padding-inline:clamp(20px,3.2vw,48px)}
+  .home-screen .mission-topline{align-items:center;margin-bottom:24px}
+  .home-screen .mission-topline>div{min-width:0}
+  .home-screen .mission-hero{min-height:316px;padding:clamp(30px,4vw,48px)}
+  .home-screen .mission-hero>div:first-child{max-width:min(68%,650px)}
+  .home-screen .mission-hero .mission-actions{display:flex;flex-wrap:wrap}
+  .home-screen .mission-hero .mission-actions>*{min-height:48px}
+  .home-screen .home-command-rail{margin-top:14px}
+  .home-screen .mission-section-heading{margin-top:30px}
+  .home-screen .mission-metrics article{min-height:128px}
+}
+
+@media(max-width:799px){
+  .home-screen .mission-dashboard{padding-bottom:calc(108px + env(safe-area-inset-bottom))}
+  .home-screen .mission-topline{margin-bottom:16px}
+  .home-screen .mission-topline .mission-muted{max-width:34ch}
+  .home-screen .mission-hero .mission-chip{font-size:9px}
+  .home-screen .mission-hero .mission-actions>*{font-size:13px}
+  .home-screen .mission-metrics article{min-height:98px;display:flex;flex-direction:column;justify-content:center}
+  .home-screen .mission-quick-grid button{min-height:108px}
+  .bottom-nav{z-index:80!important;padding-bottom:max(4px,env(safe-area-inset-bottom))!important}
+  .bottom-nav button{min-height:56px!important;touch-action:manipulation}
+}
+
+@media(max-width:380px){
+  .home-screen .mission-dashboard{padding-inline:8px}
+  .home-screen .mission-topline .mission-muted{font-size:11px}
+  .home-screen .mission-metrics article{min-height:94px;padding-inline:5px}
+  .home-screen .mission-metrics em{font-size:7px}
+  .home-screen .mission-quick-grid button{min-height:102px;padding-inline:8px}
+}
+
+@media(prefers-reduced-motion:reduce){.front-face-pending,.front-face-pending *,.front-face-pending *::before,.front-face-pending *::after{animation:none!important;animation-play-state:paused!important;transition:none!important}.front-face-pending .front-face-mark img{filter:drop-shadow(0 4px 9px rgba(221,171,75,.1)) saturate(1.14) contrast(1.12) brightness(1.03)!important}.front-face-pending .front-face-mark::after{background:linear-gradient(112deg,rgba(255,245,184,.18) 0%,rgba(255,247,202,.08) 25%,rgba(170,103,18,.05) 49%,rgba(255,232,137,.14) 72%,rgba(169,103,18,.04) 100%);background-size:100% 100%;opacity:.72;animation:none!important}}
+.front-face-pending .front-face-brand>span,.front-face-pending .front-face-tagline{-webkit-text-fill-color:transparent}
+@media(prefers-reduced-motion:reduce){.front-face-pending .front-face-brand>span,.front-face-pending .front-face-tagline{animation:none!important;background-position:50% 0}}
+
+/* Home mobile repair: keep the platform front face readable at every narrow width. */
+@media(max-width:799px){
+  :root{--home-gold:#d9ae58;--home-gold-soft:#f1d58d;--home-ink:#050505;--home-panel:#11100d;--home-line:rgba(217,174,88,.24)}
+  body{background:var(--home-ink)!important;color:#f5eee2!important;padding-bottom:82px!important}
+  main{width:100%!important;max-width:none!important;padding:0 12px 24px!important}
+  .app-header{height:70px!important;padding:8px 12px!important;background:rgba(5,5,5,.97)!important;border-bottom:1px solid var(--home-line)!important}
+  .app-header .brand{gap:8px!important}.app-header .brand img{width:42px!important;height:42px!important}.app-header .brand span b{color:var(--home-gold-soft)!important;font-size:20px!important;letter-spacing:.16em!important}
+  .header-actions{gap:6px!important}.header-actions .round-btn{width:38px!important;height:38px!important;border-color:var(--home-line)!important;color:var(--home-gold-soft)!important;background:#0c0b09!important}
+  .mobile-menu{top:70px!important;right:12px!important;left:12px!important;border:1px solid var(--home-line)!important;background:#0d0c0a!important;box-shadow:0 18px 40px rgba(0,0,0,.55)!important}
+  .mobile-app-home{display:block!important;padding:16px 0 12px!important}
+  .mobile-welcome{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:12px!important;margin:0 2px 14px!important}
+  .mobile-welcome p{margin:0 0 4px!important;color:#978a72!important;font-size:11px!important;letter-spacing:.08em!important;text-transform:uppercase}.mobile-welcome h1{margin:0!important;font-size:26px!important;line-height:1.05!important}.mobile-welcome h1 em{color:var(--home-gold-soft)!important;font-style:normal!important}
+  .mode-badge{flex:0 0 auto!important;border:1px solid var(--home-line)!important;border-radius:999px!important;padding:7px 9px!important;color:var(--home-gold-soft)!important;background:#100e0a!important;font-size:9px!important;white-space:nowrap!important}
+  .mobile-hero{box-sizing:border-box!important;min-height:0!important;margin:0!important;padding:22px 18px 20px!important;border:1px solid var(--home-line)!important;border-radius:20px!important;background:radial-gradient(circle at 88% 18%,rgba(217,174,88,.18),transparent 34%),linear-gradient(145deg,#17130c,#090806 70%)!important;box-shadow:0 16px 34px rgba(0,0,0,.34)!important}
+  .mobile-hero:before{background:linear-gradient(rgba(217,174,88,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(217,174,88,.045) 1px,transparent 1px)!important;background-size:32px 32px!important}
+  .mobile-hero-copy{width:100%!important;max-width:none!important}.mobile-hero-copy>small{color:var(--home-gold)!important;font-size:10px!important;letter-spacing:.24em!important}.mobile-hero-copy h2{max-width:75%!important;margin:12px 0 10px!important;color:#fff!important;font-size:clamp(34px,10vw,46px)!important;line-height:1.02!important;letter-spacing:-.03em!important}.mobile-hero-copy h2 em{color:var(--home-gold-soft)!important}.mobile-hero-copy p{max-width:72%!important;margin:0 0 18px!important;color:#c7bda9!important;font-size:13px!important;line-height:1.45!important}
+  .mobile-hero>img{right:-8%!important;top:auto!important;bottom:48px!important;width:54%!important;height:170px!important;opacity:.22!important;filter:sepia(1) saturate(.7) drop-shadow(0 0 22px rgba(217,174,88,.45))!important;pointer-events:none!important}
+  .mobile-hero-actions{position:relative!important;z-index:6!important;display:grid!important;grid-template-columns:minmax(0,1fr) minmax(0,1fr)!important;gap:8px!important;margin:0!important}.mobile-hero-actions .primary,.mobile-hero-actions .secondary{box-sizing:border-box!important;width:100%!important;min-width:0!important;height:48px!important;padding:0 8px!important;border-radius:10px!important;font-size:12px!important;white-space:nowrap!important}.mobile-hero-actions .primary{background:linear-gradient(180deg,#f0d18a,#bd8735)!important;color:#1a1207!important}.mobile-hero-actions .secondary{display:inline-flex!important;border:1px solid rgba(217,174,88,.5)!important;background:rgba(0,0,0,.48)!important;color:var(--home-gold-soft)!important}
+  .mobile-trust{position:static!important;height:auto!important;margin:18px -18px -20px!important;padding:10px 8px!important;display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;background:rgba(0,0,0,.3)!important;border-top:1px solid var(--home-line)!important}.mobile-trust span{min-height:26px!important;height:auto!important;padding:5px!important;color:#b9ad96!important;font-size:9px!important;border-right:0!important}
+  .mobile-section-head{display:flex!important;align-items:center!important;justify-content:space-between!important;gap:10px!important;margin:24px 2px 10px!important}.mobile-section-head h3{margin:0!important;color:#f5eee2!important;font-size:20px!important}.mobile-section-head button,.mobile-section-head small{max-width:52%!important;color:var(--home-gold)!important;font-size:10px!important;text-align:right!important;white-space:normal!important}
+  .mobile-market{box-sizing:border-box!important;padding:10px!important;border:1px solid var(--home-line)!important;border-radius:16px!important;background:#0d0c0a!important}.mobile-market-grid{display:grid!important;grid-template-columns:1fr!important;gap:7px!important;overflow:visible!important;padding:0!important}.mobile-market-grid article{box-sizing:border-box!important;min-width:0!important;min-height:0!important;height:auto!important;padding:11px!important;border:1px solid rgba(217,174,88,.14)!important;border-radius:11px!important;background:#15120d!important}.mobile-market-grid article svg{display:none!important}.mobile-market-grid .market-name{display:flex!important;align-items:center!important;gap:8px!important}.mobile-market-grid .market-name span{color:var(--home-gold)!important}.mobile-market-grid strong{display:block!important;margin-top:7px!important;color:#eee4d1!important;font-size:12px!important}.mobile-market-grid em{color:#a99572!important;font-size:9px!important}
+  .mobile-feature-grid{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:8px!important}.mobile-feature-grid button{box-sizing:border-box!important;min-width:0!important;min-height:118px!important;padding:13px!important;border:1px solid var(--home-line)!important;border-radius:14px!important;background:#11100d!important;text-align:left!important}.mobile-feature-grid .mi{color:var(--home-gold)!important}.mobile-feature-grid b{font-size:12px!important}.mobile-feature-grid small{color:#9e917b!important;font-size:9px!important}
+  .mobile-insights-grid{display:block!important}.mobile-insight{box-sizing:border-box!important;display:grid!important;grid-template-columns:82px minmax(0,1fr) auto!important;gap:10px!important;min-height:0!important;margin:0 0 8px!important;padding:8px!important;border:1px solid var(--home-line)!important;border-radius:14px!important;background:#11100d!important}.insight-image{height:72px!important;border-radius:9px!important}.insight-copy h4{margin:5px 0 0!important;font-size:11px!important;line-height:1.3!important}.insight-copy p{display:none!important}.insight-copy>div{display:flex!important;justify-content:space-between!important;gap:6px!important}.insight-copy>div span,.insight-copy time{font-size:7px!important;color:var(--home-gold)!important}.mobile-insight>b{color:var(--home-gold)!important}
+  .gani-install-banner{display:block!important;margin:18px 0 0!important;padding:16px!important;border:1px solid var(--home-line)!important;border-radius:16px!important;background:linear-gradient(145deg,#1a140b,#0b0906)!important}.gani-install-banner h3{font-size:20px!important}.gani-install-banner p{font-size:11px!important;color:#b9ad96!important}.gani-install-banner>img{display:none!important}.gani-install-banner>div>div{display:grid!important;grid-template-columns:1fr 1fr!important;gap:8px!important}.gani-install-banner a{min-height:44px!important;padding:0 8px!important;font-size:11px!important}
+  .mobile-command-strip{display:none!important}
+  .bottom-nav{box-sizing:border-box!important;left:10px!important;right:10px!important;bottom:max(8px,env(safe-area-inset-bottom))!important;width:auto!important;height:66px!important;max-width:none!important;transform:none!important;margin:0!important;padding:4px!important;border:1px solid var(--home-line)!important;border-radius:16px!important;background:rgba(12,11,9,.98)!important;box-shadow:0 14px 32px rgba(0,0,0,.58)!important}.bottom-nav button{min-width:0!important;gap:3px!important;border-radius:11px!important;color:#86775e!important}.bottom-nav button span{font-size:17px!important;line-height:1!important}.bottom-nav button small{font-size:8px!important;white-space:nowrap!important}.bottom-nav button.active{color:var(--home-gold-soft)!important;background:rgba(217,174,88,.12)!important}.bottom-nav button.active:after{display:none!important}
+}
+@media(max-width:359px){.mobile-hero-copy h2{font-size:33px!important}.mobile-hero-copy p{max-width:68%!important;font-size:12px!important}.mobile-hero-actions .primary,.mobile-hero-actions .secondary{font-size:11px!important}.bottom-nav button small{font-size:7px!important}}
+
+/* Home snapshot states are generated from the local directory and remain keyboard/touch usable. */
+@media(max-width:799px){
+  .mobile-market-grid .home-mobile-market{cursor:pointer;transition:border-color .2s,background .2s}
+  .mobile-market-grid .home-mobile-market:hover,.mobile-market-grid .home-mobile-market:focus-visible{border-color:rgba(217,174,88,.55)!important;background:#1a160f!important;outline:2px solid rgba(217,174,88,.28);outline-offset:2px}
+  .mobile-market-grid .market-loading{cursor:default;opacity:.8}
+}
+
+/* Final narrow-screen pass: keep the primary actions and navigation legible at 320–430px. */
+@media(max-width:799px){
+  .mobile-hero-actions{grid-template-columns:minmax(0,1fr)!important;gap:8px!important}
+  .mobile-hero-actions .primary,.mobile-hero-actions .secondary{min-height:46px!important;height:auto!important;padding:0 12px!important;white-space:normal!important}
+  .mobile-hero-copy p{max-width:76%!important}
+  .mobile-hero>img{right:-12%!important;bottom:102px!important;width:49%!important;height:145px!important;opacity:.16!important}
+  .mobile-trust{margin-top:16px!important}
+  .mobile-section-head{margin-top:22px!important}
+  .mobile-section-head button{display:inline-flex!important;align-items:center!important;justify-content:flex-end!important;min-height:34px!important;padding:5px 0!important}
+  .mobile-feature-grid button{min-height:110px!important}
+  .mobile-feature-grid small{line-height:1.25!important}
+  .bottom-nav{grid-template-columns:repeat(5,minmax(0,1fr))!important}
+  .bottom-nav button{padding:4px 1px!important}
+  .bottom-nav button small{font-size:clamp(7px,2.1vw,9px)!important;letter-spacing:-.01em!important}
+}
+@media(min-width:361px) and (max-width:799px){
+  .mobile-hero-actions{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+  .mobile-hero-actions .primary,.mobile-hero-actions .secondary{padding-inline:8px!important;white-space:nowrap!important}
+  .mobile-hero>img{bottom:48px!important;width:54%!important;height:170px!important;opacity:.22!important}
+}
+
+/* Home Dashboard batch: the mission dashboard is the single active Front Face.
+   The older marketing home remains in the document for compatibility, but must
+   not create a second scroll surface or a competing navigation on phones. */
+.home-screen>.mobile-app-home,
+.home-screen>.hero-card,
+.home-screen>.quick-actions,
+.home-screen>.home-grid,
+.home-screen>.overview-card,
+.home-screen>.proof-row{display:none!important}
+
+@media(max-width:799px){
+  body:has(.home-screen.active){overflow-x:hidden}
+  body:has(.home-screen.active) main{padding-inline:0!important}
+  .home-screen .mission-dashboard{padding-inline:clamp(8px,3.2vw,18px)!important}
+  .home-screen .mission-hero{box-shadow:0 18px 38px rgba(0,0,0,.32),inset 0 1px rgba(255,255,255,.04)}
+  .home-screen .mission-hero-meta{gap:clamp(10px,4vw,22px);flex-wrap:wrap}
+  .home-screen .mission-hero-meta span{min-width:0;flex:1 1 65px}
+  .home-screen .mission-hero-meta small{font-size:9px}
+  .home-screen .workspace-action{min-width:0}
+}
+
+@media(max-width:340px){
+  .home-screen .mission-topline h1{font-size:1.72rem}
+  .home-screen .mission-topline .mission-muted{font-size:10px}
+  .home-screen .mission-hero h2{font-size:1.74rem}
+  .home-screen .mission-hero p{font-size:11px}
+  .home-screen .mission-actions>*{font-size:12px}
+  .home-screen .mission-section-heading h3{font-size:16px}
+  .home-screen .mission-quick-grid button{min-height:94px}
+}
+
+/* Owner Front Face final visual lock. The mark is an alpha cutout only; the
+   moving highlight is a separate masked paint layer and cannot move the mark. */
+.front-face-pending .gani-front-face{
+  min-height:100svh;
+  background:#000;
+}
+.front-face-pending .front-face-inner{
+  width:min(100%,560px);
+  min-height:0;
+}
+.front-face-pending .front-face-mark,
+.front-face-pending .front-face-mark img{
+  background:transparent!important;
+  background-color:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+}
+.front-face-pending .front-face-mark{
+  flex:0 1 auto;
+  width:clamp(138px, min(30vw, 29vh), 286px);
+  aspect-ratio:1046 / 1504;
+}
+.front-face-pending .front-face-mark img{
+  filter:drop-shadow(0 3px 8px rgba(221,171,75,.12)) saturate(1.18) contrast(1.18) brightness(1.06);
+}
+.front-face-pending .front-face-mark::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:linear-gradient(104deg,transparent 0 39%,rgba(255,250,210,.05) 43%,rgba(255,250,210,.76) 47%,rgba(255,218,116,.18) 51%,rgba(255,250,210,.03) 56%,transparent 61%);
+  background-size:220% 100%;
+  background-repeat:no-repeat;
+  -webkit-mask:url("assets/gani-front-face-crowned-emblem.png") center / 100% 100% no-repeat;
+  mask:url("assets/gani-front-face-crowned-emblem.png") center / 100% 100% no-repeat;
+  mix-blend-mode:screen;
+  animation:front-face-reflection 14s ease-in-out infinite;
+}
+@media(max-width:560px){
+  .front-face-pending .front-face-mark{width:clamp(138px,47vw,224px)}
+}
+@media(max-width:360px),(max-height:620px){
+  .front-face-pending .front-face-mark{width:138px}
+}
+@media(prefers-reduced-motion:reduce){
+  .front-face-pending .front-face-mark::after{
+    animation:none!important;
+    background:linear-gradient(112deg,rgba(255,245,184,.18),rgba(255,247,202,.08) 25%,rgba(170,103,18,.05) 49%,rgba(255,232,137,.14) 72%,rgba(169,103,18,.04));
+    background-size:100% 100%;
+    opacity:.72;
+  }
+}
+
+/* Final cascade lock: this is intentionally last so no legacy surface rule
+   can reintroduce a canvas, haze, or motion on the owner Front Face. */
+.front-face-pending .front-face-inner{width:min(100%,540px)}
+.front-face-pending .front-face-mark img{
+  filter:saturate(1.24) contrast(1.2) brightness(1.08) drop-shadow(0 2px 6px rgba(198,146,54,.1))!important;
+}
+.front-face-pending .front-face-mark::after{
+  animation:front-face-reflection 18s ease-in-out infinite!important;
+}
+@media(prefers-reduced-motion:reduce){
+  .front-face-pending .front-face-mark::after{animation:none!important}
+}
+
+/* Owner Front Face finish: the supplied cutout is the only emblem artwork.
+   Keep its geometry fixed; the highlight is painted inside the alpha mask. */
+.front-face-pending .gani-front-face{
+  background:#000!important;
+  color:#f4eee2;
+}
+.front-face-pending .gani-front-face::before{
+  background:radial-gradient(ellipse at 50% 14%,rgba(255,215,128,.018),transparent 20%),#000!important;
+}
+.front-face-pending .front-face-inner{
+  width:min(100%,540px);
+  padding-block:clamp(2px,1.2vh,12px);
+}
+.front-face-pending .front-face-mark{
+  width:clamp(150px,min(31vw,28vh),292px)!important;
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+}
+.front-face-pending .front-face-mark img{
+  filter:saturate(1.24) contrast(1.2) brightness(1.08) drop-shadow(0 2px 6px rgba(198,146,54,.1))!important;
+}
+.front-face-pending .front-face-mark::after{
+  background:linear-gradient(104deg,transparent 0 42%,rgba(255,250,214,.03) 44%,rgba(255,250,214,.8) 48%,rgba(255,219,119,.16) 52%,rgba(255,250,214,.03) 56%,transparent 59%)!important;
+  background-size:240% 100%!important;
+  -webkit-mask:url("assets/gani-front-face-crowned-emblem.png") center / 100% 100% no-repeat!important;
+  mask:url("assets/gani-front-face-crowned-emblem.png") center / 100% 100% no-repeat!important;
+  animation:front-face-reflection 18s ease-in-out infinite!important;
+}
+.front-face-pending .front-face-brand>span,
+.front-face-pending .front-face-tagline{
+  text-shadow:none!important;
+  animation-duration:30s!important;
+}
+.front-face-pending .front-face-tagline{animation-delay:4s!important}
+
+@media (max-width:560px){
+  .front-face-pending .gani-front-face{padding-inline:18px}
+  .front-face-pending .front-face-mark{width:clamp(150px,47vw,226px)!important}
+  .front-face-pending .front-face-actions{width:min(100%,322px)}
+}
+@media (max-width:360px),(max-height:620px){
+  .front-face-pending .front-face-mark{width:150px!important}
+  .front-face-pending .front-face-inner{padding-block:0}
+  .front-face-pending .front-face-copy{margin-top:10px}
+  .front-face-pending .front-face-actions{margin-top:20px}
+  .front-face-pending .front-face-start,
+  .front-face-pending .front-face-signin{min-height:50px}
+}
+@media (prefers-reduced-motion:reduce){
+  .front-face-pending .front-face-mark::after{
+    animation:none!important;
+    background:linear-gradient(112deg,rgba(255,245,184,.16),rgba(255,247,202,.07) 25%,rgba(170,103,18,.04) 49%,rgba(255,232,137,.12) 72%,rgba(169,103,18,.03))!important;
+    background-size:100% 100%!important;
+  }
+  .front-face-pending .front-face-brand>span,
+  .front-face-pending .front-face-tagline{
+    animation:none!important;
+    background-position:50% 0!important;
+  }
+}
+
+/* Once the owner gate is dismissed, remove the dialog from layout entirely.
+   aria-hidden/inert protect interaction semantics, but neither hides pixels. */
+.gani-front-face[aria-hidden="true"]{
+  display:none!important;
+}
+
+/* Keep the active gate independent of any legacy section defaults. */
+.front-face-pending .gani-front-face[aria-hidden="false"]{
+  display:grid!important;
+}
+
+/* Owner review geometry lock: preserve usable tap targets at the exact phone
+   widths requested for the Front Face without allowing a card to force a
+   second horizontal scroll area. */
+@media (max-width:430px){
+  .home-screen .mission-dashboard{overflow:clip}
+  .home-screen .mission-topline{align-items:flex-start}
+  .home-screen .mission-topline>div{min-width:0}
+  .home-screen .mission-topline h1{font-size:clamp(1.72rem,8.6vw,2.28rem)}
+  .home-screen .mission-topline .mission-muted{font-size:clamp(10px,2.8vw,12px);line-height:1.4}
+  .home-screen .mission-avatar{flex:0 0 42px}
+  .home-screen .home-status-main,
+  .home-screen .home-status-details{width:100%;min-width:0}
+  .home-screen .home-status-details{align-items:start}
+  .home-screen .home-status-details>span{min-width:0}
+  .home-screen .home-status-details b{font-size:clamp(8px,2.25vw,10px)}
+  .home-screen .mission-hero{min-height:0}
+  .home-screen .mission-hero h2{font-size:clamp(1.82rem,9vw,2.55rem)}
+  .home-screen .mission-hero p{font-size:clamp(11px,2.9vw,13px);line-height:1.45}
+  .home-screen .mission-actions>*{min-height:48px}
+  .home-screen .home-command-rail .command-card{grid-template-columns:30px minmax(0,1fr) auto}
+  .home-screen .mission-section-heading{align-items:start}
+  .home-screen .mission-section-heading h3{font-size:clamp(16px,4.8vw,20px)}
+  .home-screen .mission-metrics article{padding-inline:clamp(5px,2vw,10px)}
+  .home-screen .mission-quick-grid button{min-height:100px}
+}
+
+@media (max-width:340px){
+  .home-screen .mission-dashboard{padding-inline:7px}
+  .home-screen .home-status-details{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .home-screen .mission-metrics{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .home-screen .mission-metrics small{letter-spacing:0}
+  .home-screen .mission-quick-grid{gap:6px}
+  .home-screen .mission-quick-grid button{padding-inline:8px}
+}
+
+/* Front Face header fit: on a phone the navigation menu owns the extra
+   destinations, leaving the brand, notifications, and menu reachable. */
+@media (max-width:799px){
+  body:has(.home-screen.active) .app-header{grid-template-columns:minmax(0,1fr) auto;gap:8px}
+  body:has(.home-screen.active) .app-header .workspace-state,
+  body:has(.home-screen.active) .app-header #searchToggle{display:none!important}
+  body:has(.home-screen.active) .app-header .header-actions{min-width:0}
+  body:has(.home-screen.active) .app-header .brand{min-width:0}
+  body:has(.home-screen.active) .app-header .brand span{min-width:0}
+  body:has(.home-screen.active) .app-header .brand span b{white-space:nowrap}
+  .home-screen .availability-card:disabled{cursor:not-allowed;opacity:.58;border-style:dashed;background:rgba(255,255,255,.025);transform:none!important}
+  .home-screen .availability-card:disabled i{color:#9e917b;font-size:9px}
+}
+
+@media (min-width:800px) and (max-width:1100px){
+  body:has(.home-screen.active) .app-header .workspace-state{display:none}
+  body:has(.home-screen.active) .app-header .header-actions{min-width:0}
+}
+
+@media (min-width:761px) and (max-width:1120px){
+  .home-screen .mission-dashboard{padding-bottom:110px}
+  .home-screen .home-status-band{gap:14px}
+  .home-screen .home-status-main{flex:1 1 46%}
+  .home-screen .home-status-details{flex:1 1 54%;gap:10px}
+  .home-screen .home-status-link{padding-left:10px}
+  .home-screen .mission-hero h2{font-size:clamp(2rem,4.5vw,3rem)}
+}
+
+/* Home dashboard finish: expose the three-step product path in the hero and
+   keep the live/demo badge truthful when a provider is configured. */
+.mission-hero-meta{display:flex;gap:22px;margin-top:26px;padding-top:14px;border-top:1px solid rgba(217,174,88,.16);color:#9b8d75}
+.mission-hero-meta span{display:grid;gap:3px;min-width:72px}
+.mission-hero-meta b{color:var(--home-gold-soft,#f1d58d);font-size:10px;letter-spacing:.12em}
+.mission-hero-meta small{font-size:10px;line-height:1.2}
+.home-overview-mode.is-connected{color:#79e1a7;border-color:rgba(66,216,135,.36);background:rgba(66,216,135,.08)}
+@media(max-width:760px){
+  .mission-hero-meta{gap:14px;margin-top:20px;padding-top:12px}
+  .mission-hero-meta span{min-width:0;flex:1}
+  .mission-hero-meta small{font-size:9px}
+}
+
+/* Final interaction affordances for the owner-facing dashboard. */
+.home-screen .mission-dashboard button,
+.home-screen .mission-dashboard [role="button"]{touch-action:manipulation}
+.home-screen .mission-dashboard button:focus-visible,
+.home-screen .mission-dashboard [role="button"]:focus-visible,
+.bottom-nav button:focus-visible{outline:2px solid #f1d58d;outline-offset:3px}
+.home-screen .command-card-muted:focus-visible{border-color:rgba(255,255,255,.42)}
+
+@media(min-width:761px){
+  .home-screen .mission-dashboard{padding-top:clamp(30px,4vw,54px)}
+  .home-screen .mission-topline{padding-inline:2px}
+}
+
+/* Home batch delivery pass: give the tablet breakpoint its own header geometry.
+   This prevents the desktop navigation and utility controls from competing in
+   the 800–1040px range while keeping the full five-destination nav available. */
+@media(min-width:800px) and (max-width:1040px){
+  body:has(.home-screen.active) .app-header{grid-template-columns:auto minmax(0,1fr) auto;gap:10px;padding-inline:18px}
+  body:has(.home-screen.active) .app-header .brand{gap:7px}
+  body:has(.home-screen.active) .app-header .brand img{width:44px;height:44px}
+  body:has(.home-screen.active) .app-header .brand span b{font-size:20px;letter-spacing:.1em}
+  body:has(.home-screen.active) .desktop-nav{gap:0}
+  body:has(.home-screen.active) .desktop-nav button{padding-inline:7px;font-size:11px}
+  body:has(.home-screen.active) .header-actions{gap:5px}
+  body:has(.home-screen.active) .header-actions .workspace-state,
+  body:has(.home-screen.active) .header-actions .desktop-only{display:none}
+  body:has(.home-screen.active) .header-actions .round-btn{width:36px;height:36px}
+  .home-screen .mission-dashboard{padding-inline:24px}
+  .home-screen .mission-hero{min-height:300px;padding:30px}
+  .home-screen .mission-hero>div:first-child{max-width:62%}
+  .home-screen .mission-orb{width:176px;height:176px}
+}
+
+/* Tablet Home shell: keep the header, hero and rail in one calm reading width.
+   The five-destination bottom bar remains the primary navigation in this range. */
+@media(min-width:761px) and (max-width:1100px){
+  body:has(.home-screen.active) main{padding-inline:18px}
+  body:has(.home-screen.active) .app-header{height:72px}
+  body:has(.home-screen.active) .home-screen .mission-dashboard{max-width:860px;margin-inline:auto}
+  body:has(.home-screen.active) .home-screen .mission-topline{margin-bottom:20px}
+  body:has(.home-screen.active) .home-screen .mission-hero{display:flex;gap:26px;align-items:center}
+  body:has(.home-screen.active) .home-screen .mission-hero>div:first-child{flex:1 1 auto;max-width:68%}
+  body:has(.home-screen.active) .home-screen .mission-hero .mission-orb{flex:0 0 auto}
+}
+
+/* The retired marketing Home remains in markup for compatibility, but it must
+   never become a second keyboard or screen-reader surface. */
+.home-screen>.mobile-app-home[aria-hidden="true"],
+.home-screen>.hero-card[aria-hidden="true"],
+.home-screen>.quick-actions[aria-hidden="true"],
+.home-screen>.home-grid[aria-hidden="true"],
+.home-screen>.overview-card[aria-hidden="true"],
+.home-screen>.proof-row[aria-hidden="true"]{display:none!important}
+
+/* The active Home shell owns the gold surface at every desktop width. */
+@media(min-width:1041px){
+  .home-screen .mission-dashboard{max-width:1240px}
+  .home-screen .mission-hero{background:radial-gradient(circle at 82% 42%,rgba(217,174,88,.22),transparent 27%),linear-gradient(135deg,#17130d,#080a0d 58%,#11100d)}
+  .home-screen .home-command-rail{grid-template-columns:repeat(3,minmax(0,1fr))}
+}
+
+/* At 320px the three overview metrics remain readable instead of shrinking
+   into a single ambiguous row. */
+@media(max-width:340px){
+  .home-screen .mission-metrics{gap:5px}
+  .home-screen .mission-metrics article{padding-inline:5px}
+  .home-screen .mission-metrics small{font-size:7px;letter-spacing:0}
+  .home-screen .mission-metrics em{font-size:7px}
+  .home-screen .mission-hero .mission-chip{max-width:100%;font-size:8px;letter-spacing:.04em}
+  .home-screen .home-command-rail .command-card{grid-template-columns:28px minmax(0,1fr) auto;gap:7px}
+  .home-screen .home-command-rail .command-card b{font-size:10px}
+  .home-screen .home-command-rail .command-card em{font-size:7px}
+}
+
+/* Home decision loop: one compact, truthful path from research to planning. */
+.home-decision-loop{margin-top:26px;padding:20px;border:1px solid rgba(217,174,88,.18);border-radius:20px;background:linear-gradient(145deg,rgba(21,18,12,.92),rgba(8,11,16,.96));box-shadow:0 18px 38px rgba(0,0,0,.16)}
+.decision-loop-head{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;margin-bottom:14px}
+.decision-loop-head h3{margin:5px 0 0;font-size:20px;letter-spacing:-.02em}
+.decision-loop-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.decision-step{position:relative;display:grid;grid-template-columns:auto 1fr;grid-template-rows:auto auto auto;column-gap:10px;min-width:0;padding:16px;text-align:left;border:1px solid rgba(255,255,255,.1);border-radius:15px;background:rgba(255,255,255,.025);color:var(--mission-copy);transition:border-color .18s ease,background .18s ease,transform .18s ease}
+.decision-step:hover{border-color:rgba(217,174,88,.48);background:rgba(217,174,88,.07);transform:translateY(-2px)}
+.decision-number{grid-column:1/-1;color:#8c7650;font-size:9px;font-weight:800;letter-spacing:.12em;margin-bottom:12px}
+.decision-icon{grid-column:1;color:var(--home-gold-soft,#f1d58d);font-size:21px;line-height:1}
+.decision-step b{align-self:center;font-size:13px}
+.decision-step small{grid-column:1/-1;min-height:2.6em;margin-top:12px;color:#9b927f;font-size:10px;line-height:1.35}
+.decision-step i{grid-column:1/-1;margin-top:12px;color:var(--home-gold-soft,#f1d58d);font-size:10px;font-style:normal;font-weight:800}
+@media(max-width:760px){
+  .home-decision-loop{margin-top:18px;padding:14px;border-radius:16px}
+  .decision-loop-head{align-items:flex-start;margin-bottom:10px}
+  .decision-loop-head h3{font-size:16px}
+  .decision-loop-head .demo-label{font-size:8px;padding:5px 6px;white-space:nowrap}
+  .decision-loop-grid{grid-template-columns:1fr;gap:7px}
+  .decision-step{grid-template-columns:auto minmax(0,1fr) auto;grid-template-rows:auto auto;align-items:center;padding:11px 12px;column-gap:9px}
+  .decision-number{grid-column:1;margin:0;font-size:8px}
+  .decision-icon{grid-column:2;font-size:18px}
+  .decision-step b{grid-column:2;grid-row:2;align-self:start;margin-top:3px;font-size:11px}
+  .decision-step small{grid-column:3;grid-row:1/3;min-height:0;max-width:19ch;margin:0;font-size:9px;text-align:right}
+  .decision-step i{display:none}
+}
+
+/* Owner review finish: keep one Home surface at every viewport. The older
+   marketing/mobile composition remains in markup for compatibility but never
+   creates duplicate content, spacing, or clickable controls. */
+.home-screen>.mobile-app-home,
+.home-screen>.hero-card,
+.home-screen>.quick-actions,
+.home-screen>.home-grid,
+.home-screen>.overview-card,
+.home-screen>.proof-row{display:none!important}
+
+body[data-screen="home"] .app-header{
+  background:linear-gradient(180deg,rgba(5,5,5,.98),rgba(9,9,8,.9));
+  border-bottom-color:rgba(217,174,88,.24);
+}
+body[data-screen="home"] .app-header .brand img{filter:drop-shadow(0 0 14px rgba(217,174,88,.28))}
+body[data-screen="home"] .app-header .brand b,
+body[data-screen="home"] .app-header .desktop-nav button.active{color:#f1d58d}
+body[data-screen="home"] .desktop-nav button:after{background:linear-gradient(90deg,#b77c28,#f1d58d,#b77c28);box-shadow:0 0 14px rgba(217,174,88,.45)}
+
+@media(min-width:761px){
+  .home-screen .mission-hero{background:radial-gradient(circle at 82% 38%,rgba(217,174,88,.22),transparent 28%),linear-gradient(135deg,#17130d 0,#0a0b0d 58%,#12100c 100%)}
+  .home-screen .mission-metrics article,
+  .home-screen .workspace-lead,
+  .home-screen .workspace-boundary,
+  .home-screen .mission-quick-grid button{background:linear-gradient(145deg,rgba(20,18,14,.98),rgba(8,10,13,.98))}
+}
+
+/* Final front-face usability pass: the dashboard owns the viewport width and
+   every primary action stays visible without horizontal drift. */
+html,body{max-width:100%;overflow-x:hidden}
+.home-screen .mission-dashboard{width:100%;box-sizing:border-box}
+.home-screen .mission-dashboard button{font:inherit}
+.home-screen .mission-topline .mission-muted{max-width:52ch}
+.home-screen .mission-hero p{max-width:54ch}
+.home-screen .mission-hero .mission-actions{align-items:stretch}
+.home-screen .mission-hero .mission-actions>*{min-width:0}
+.home-screen .home-command-rail .command-card{min-width:0}
+.home-screen .home-command-rail .command-card span:nth-child(2){min-width:0}
+.home-screen .home-command-rail .command-card em,
+.home-screen .workspace-action small,
+.home-screen .mission-quick-grid small{overflow-wrap:anywhere}
+
+@media (max-width:799px){
+  .home-screen .mission-dashboard{padding-left:max(8px,env(safe-area-inset-left));padding-right:max(8px,env(safe-area-inset-right))}
+  .home-screen .mission-topline{gap:10px}
+  .home-screen .mission-topline .mission-muted{max-width:34ch}
+  .home-screen .mission-hero{width:100%;min-width:0}
+  .home-screen .mission-hero p{max-width:100%}
+  .home-screen .mission-hero .mission-actions{grid-template-columns:minmax(0,1fr);width:100%}
+  .home-screen .mission-hero .mission-actions>*{width:100%;max-width:100%;white-space:normal}
+  .home-screen .home-command-rail,
+  .home-screen .mission-metrics,
+  .home-screen .mission-quick-grid{width:100%;min-width:0}
+  .home-screen .mission-metrics article{min-width:0}
+  .home-screen .home-workspace{min-width:0}
+}
+
+@media (min-width:361px) and (max-width:799px){
+  .home-screen .mission-hero .mission-actions{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+@media (min-width:800px) and (max-width:1100px){
+  .home-screen .mission-dashboard{padding-bottom:64px}
+  .home-screen .mission-topline .mission-muted{max-width:42ch}
+  .home-screen .mission-hero{min-width:0}
+  .home-screen .mission-hero>div:first-child{min-width:0}
+  .home-screen .home-workspace{grid-template-columns:minmax(0,1.2fr) minmax(260px,.8fr)}
+}
+
+@media (min-width:1101px){
+  .home-screen .mission-dashboard{padding-bottom:64px}
+}
+
+/* Home batch final geometry: keep every primary surface inside the viewport
+   while preserving the owner's single black-and-gold command surface. */
+.home-screen .mission-dashboard,
+.home-screen .mission-dashboard > *{max-width:100%}
+.home-screen .home-status-main,
+.home-screen .home-status-details,
+.home-screen .workspace-heading,
+.home-screen .decision-loop-head{min-width:0}
+.home-screen .home-status-main > div,
+.home-screen .home-status-details > span,
+.home-screen .workspace-heading > div,
+.home-screen .decision-loop-head > div{min-width:0}
+.home-screen .home-status-main small,
+.home-screen .workspace-heading h3,
+.home-screen .decision-loop-head h3{overflow-wrap:anywhere}
+
+@media (min-width:1121px){
+  body:has(.home-screen.active) .app-header{grid-template-columns:auto minmax(0,1fr) auto}
+  body:has(.home-screen.active) .desktop-nav{min-width:0}
+  body:has(.home-screen.active) .desktop-nav button{padding-inline:clamp(10px,1.1vw,16px)}
+  .home-screen .mission-dashboard{padding-inline:clamp(24px,3.5vw,56px)}
+  .home-screen .mission-hero{min-height:324px}
+  .home-screen .home-workspace{grid-template-columns:minmax(0,1.45fr) minmax(320px,.8fr)}
+}
+
+@media (min-width:761px) and (max-width:1120px){
+  body:has(.home-screen.active){padding-bottom:98px}
+  body:has(.home-screen.active) main{width:100%;max-width:none;padding-inline:clamp(16px,3vw,28px)}
+  body:has(.home-screen.active) .home-screen .mission-dashboard{padding-inline:0}
+  body:has(.home-screen.active) .bottom-nav{bottom:max(14px,env(safe-area-inset-bottom));width:min(560px,calc(100vw - 32px))}
+  .home-screen .home-status-band{align-items:flex-start}
+  .home-screen .home-status-details{flex-wrap:wrap}
+  .home-screen .home-status-link{margin-left:auto}
+}
+
+@media (max-width:760px){
+  .home-screen .home-status-main{align-items:flex-start}
+  .home-screen .home-status-main small{max-width:30ch}
+  .home-screen .home-status-details{min-width:0}
+  .home-screen .home-status-details > span{min-width:0}
+  .home-screen .home-status-details b{overflow-wrap:anywhere;white-space:normal}
+  .home-screen .home-command-rail .command-card,
+  .home-screen .workspace-action,
+  .home-screen .decision-step{min-width:0}
+}
+
+@media (max-width:340px){
+  .home-screen .mission-dashboard{padding-inline:7px}
+  .home-screen .home-status-main{gap:7px}
+  .home-screen .home-status-main small{max-width:25ch}
+  .home-screen .home-status-details{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .home-screen .home-status-details > span{min-width:0}
+  .home-screen .home-status-details b{font-size:8px}
+  .home-screen .home-command-rail .command-card{grid-template-columns:28px minmax(0,1fr) auto}
+}
+
+/* Owner Front Face: final visual authority. Keep this surface intentionally
+   quiet: true black, one transparent emblem, and one clipped reflection. */
+.front-face-pending .gani-front-face,
+.front-face-pending .gani-front-face::before{
+  background:#000!important;
+}
+.front-face-pending .gani-front-face::before{
+  background:radial-gradient(ellipse at 50% 18%,rgba(255,213,123,.022),transparent 24%),#000!important;
+}
+.front-face-pending .front-face-mark{
+  background:transparent!important;
+  background-image:none!important;
+  border:0!important;
+  box-shadow:none!important;
+  width:clamp(146px,min(31vw,28vh),300px);
+}
+.front-face-pending .front-face-mark img{
+  background:transparent!important;
+  background-image:none!important;
+  border:0!important;
+  box-shadow:none!important;
+  filter:drop-shadow(0 3px 8px rgba(191,137,47,.14)) saturate(1.2) contrast(1.18) brightness(1.08)!important;
+}
+.front-face-pending .front-face-mark::after{
+  z-index:2;
+  background:linear-gradient(106deg,transparent 0 39%,rgba(255,249,210,.04) 43%,rgba(255,249,210,.82) 47%,rgba(255,218,116,.2) 51%,rgba(255,249,210,.04) 56%,transparent 61%)!important;
+  background-size:240% 100%!important;
+  background-repeat:no-repeat!important;
+  -webkit-mask:url("assets/gani-front-face-crowned-emblem.png") center / 100% 100% no-repeat!important;
+  mask:url("assets/gani-front-face-crowned-emblem.png") center / 100% 100% no-repeat!important;
+  mix-blend-mode:screen;
+  animation:front-face-reflection 16s ease-in-out infinite!important;
+}
+.front-face-pending .front-face-brand>span,
+.front-face-pending .front-face-tagline{
+  text-shadow:none!important;
+}
+.front-face-pending .front-face-brand>span{
+  animation-duration:24s!important;
+}
+.front-face-pending .front-face-tagline{
+  animation-duration:24s!important;
+  animation-delay:4s!important;
+}
+.front-face-pending .front-face-start{
+  box-shadow:0 8px 22px rgba(192,137,49,.15),inset 0 1px rgba(255,255,255,.5)!important;
+}
+@media(prefers-reduced-motion:reduce){
+  .front-face-pending .front-face-mark::after{
+    animation:none!important;
+    background:linear-gradient(112deg,rgba(255,245,184,.17),rgba(255,247,202,.07) 25%,rgba(170,103,18,.04) 49%,rgba(255,232,137,.13) 72%,rgba(169,103,18,.03))!important;
+    background-size:100% 100%!important;
+    opacity:.72;
+  }
+  .front-face-pending .front-face-brand>span,
+  .front-face-pending .front-face-tagline{
+    animation:none!important;
+    background-position:50% 0!important;
+  }
+}
+
+/* The emblem has no painted wrapper: keep its alpha edge clean even when a
+   browser applies image defaults or a narrow viewport compresses the layout. */
+.front-face-pending .front-face-mark,
+.front-face-pending .front-face-mark::before,
+.front-face-pending .front-face-mark::after,
+.front-face-pending .front-face-mark img{
+  outline:0!important;
+  border-radius:0!important;
+}
+@media(max-width:560px){
+  .front-face-pending .front-face-mark{width:clamp(146px,47vw,224px)}
+}
+@media(max-width:360px),(max-height:620px){
+  .front-face-pending .front-face-mark{width:146px}
+}
+
+/* Front Face owner lock: the only moving pixels are the clipped metallic
+   reflection. The supplied emblem and its transparent edge stay stationary. */
+.front-face-pending .gani-front-face,
+.front-face-pending .gani-front-face::before{
+  background:#000!important;
+}
+.front-face-pending .gani-front-face::before{
+  background:radial-gradient(ellipse at 50% 16%,rgba(255,221,145,.018),transparent 22%),#000!important;
+}
+.front-face-pending .front-face-mark{
+  width:clamp(150px,min(31vw,29vh),292px)!important;
+  aspect-ratio:1046 / 1504;
+  background:transparent!important;
+  background-image:none!important;
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  outline:0!important;
+}
+.front-face-pending .front-face-mark img{
+  background:transparent!important;
+  background-image:none!important;
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  filter:saturate(1.24) contrast(1.2) brightness(1.08) drop-shadow(0 2px 6px rgba(198,146,54,.1))!important;
+}
+.front-face-pending .front-face-mark::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:2;
+  pointer-events:none;
+  background:linear-gradient(105deg,transparent 0 41%,rgba(255,250,214,.04) 44%,rgba(255,250,214,.82) 48%,rgba(255,220,125,.18) 52%,rgba(255,250,214,.03) 56%,transparent 60%)!important;
+  background-size:240% 100%!important;
+  background-repeat:no-repeat!important;
+  -webkit-mask:url("assets/gani-front-face-crowned-emblem.png") center / 100% 100% no-repeat!important;
+  mask:url("assets/gani-front-face-crowned-emblem.png") center / 100% 100% no-repeat!important;
+  mix-blend-mode:screen;
+  animation:front-face-reflection 18s ease-in-out infinite!important;
+}
+.front-face-pending .front-face-brand>span,
+.front-face-pending .front-face-tagline{
+  text-shadow:none!important;
+  animation-duration:28s!important;
+}
+.front-face-pending .front-face-tagline{animation-delay:4s!important}
+.front-face-pending .front-face-start{box-shadow:0 8px 22px rgba(192,137,49,.14),inset 0 1px rgba(255,255,255,.5)!important}
+
+@media(max-width:560px){
+  .front-face-pending .gani-front-face{padding-inline:18px}
+  .front-face-pending .front-face-mark{width:clamp(150px,47vw,226px)!important}
+  .front-face-pending .front-face-actions{width:min(100%,322px)}
+}
+@media(max-width:360px),(max-height:620px){
+  .front-face-pending .front-face-mark{width:150px!important}
+  .front-face-pending .front-face-inner{padding-block:0}
+  .front-face-pending .front-face-copy{margin-top:10px}
+  .front-face-pending .front-face-actions{margin-top:20px}
+  .front-face-pending .front-face-start,
+  .front-face-pending .front-face-signin{min-height:50px}
+}
+@media(prefers-reduced-motion:reduce){
+  .front-face-pending .front-face-mark::after{
+    animation:none!important;
+    background:linear-gradient(112deg,rgba(255,245,184,.17),rgba(255,247,202,.07) 25%,rgba(170,103,18,.04) 49%,rgba(255,232,137,.13) 72%,rgba(169,103,18,.03))!important;
+    background-size:100% 100%!important;
+    opacity:.72;
+  }
+  .front-face-pending .front-face-brand>span,
+  .front-face-pending .front-face-tagline{
+    animation:none!important;
+    background-position:50% 0!important;
+  }
+}

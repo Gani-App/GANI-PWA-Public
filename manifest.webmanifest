@@ -5,7 +5,7 @@
   "description": "GANI — adeegyada, suuqyada, xaqiijinta, waxbarashada, taageerada iyo maamulka account-ka oo hal meel ku wada jira.",
   "lang": "so",
   "dir": "ltr",
-  "start_url": "./index.html?source=app",
+  "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "display_override": [

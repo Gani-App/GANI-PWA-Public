@@ -31,7 +31,7 @@
     "Operations"
   ],
   "data_policy": "REAL API only when configured; otherwise clearly identified demo/local mode",
-  "public_install_policy": "One official GANI website entry point. Android receives direct APK; iPhone/iPad and desktop receive the supported Web/PWA route automatically.",
+  "public_install_policy": "One official GANI website entry point. The standards-based Web/PWA install is primary on supported browsers; the Android APK is a secondary website fallback.",
   "store_gate": "Store publication still requires the publisher account, signing/review requirements and submission on the chosen authorized store.",
   "pwa_gate": "Deploy the web directory over HTTPS for installable browser/PWA distribution."
 }
